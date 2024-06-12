@@ -12,7 +12,7 @@ const Suggestion: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <section className="bodybgs">
+        <section className="bodybgs min-h-full">
           <div className="infosugg">
             <IonText color="dark" class="texth1">
               <h1>¿Por qué esta app...?</h1>

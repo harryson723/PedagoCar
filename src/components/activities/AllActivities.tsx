@@ -4,16 +4,15 @@ import {
   IonCardContent,
   IonCardHeader,
   IonCardTitle,
-  IonChip,
   IonContent,
   IonHeader,
-  IonItem,
   IonPage,
   IonTitle,
 } from "@ionic/react";
 import { useState } from "react";
 import { fetchAllData } from "../../utils/loadActivity";
 import "./activities.css";
+import Activity from "./Activity";
 
 const data = fetchAllData();
 
@@ -21,25 +20,18 @@ const AllActivities: React.FC = () => {
   const [activities, setActivities] = useState(data);
   return (
     <IonPage>
-      <IonHeader>
-        <IonTitle class="ion-text-center bg-white text-black">Actividades</IonTitle>
+      <IonHeader className="w-full h-7">
+        <IonTitle class="ion-text-center bg-white text-black">
+          Actividades
+        </IonTitle>
       </IonHeader>
-      <IonContent >
-        <section className="h-full bodybgs">
-        {activities?.map((el: any, i: number) => (
-          <IonCard key={el.title + i} title={el.title} >
-            <IonCardHeader>
-              <IonCardTitle className="text-center">{el.title}</IonCardTitle>
-            </IonCardHeader>
-            <IonCardContent>
-              {el.title}
-              <IonButton routerLink={`/activities/${el.category}/${el.id}`}>
-                Ver
-              </IonButton>
-            </IonCardContent>
-          </IonCard>
-        ))}
-        </section>        
+
+      <IonContent>
+        <section className="bodybgs min-h-full">
+          {activities?.map((el: any, i: number) => (
+            <Activity key={el.title + i} activity={el} />
+          ))}
+        </section>
       </IonContent>
     </IonPage>
   );

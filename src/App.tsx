@@ -44,7 +44,7 @@ setupIonicReact();
 const App: React.FC = () => (
   <IonApp className="basics">
     <IonReactRouter>
-      <IonTabs>
+      <IonTabs >
         <IonRouterOutlet>
           <Route exact path="/main" component={Main} />
           <Route path="/search" component={Search} />
@@ -53,7 +53,7 @@ const App: React.FC = () => (
           <Route exact path="/suggestions" component={Suggestion} />
           <Redirect exact from="/" to="/main" />
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="bottom" >
           <IonTabButton tab="main" href="/main">
             <IonIcon icon={home} />
           </IonTabButton>

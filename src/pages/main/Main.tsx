@@ -4,8 +4,8 @@ import "./main.scss"; // Asegúrate de importar el archivo SCSS
 const Main: React.FC = () => {
   return (
     <IonPage>
-      <IonContent fullscreen >
-        <div className="bodybg">
+      <IonContent >
+        <div className="bodybg min-h-full">
         </div>
       </IonContent>
     </IonPage>
