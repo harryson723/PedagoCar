@@ -1,5 +1,21 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
-.prueba {
-    background: #54006d;
+
+ion-tab-bar,
+ion-tab-button {
+    background-color: rgb(189, 132, 243);
+}
+
+ion-icon {
+    color: rgb(85, 6, 158);
+}
+
+ion-icon:hover {
+    color: rgb(205, 173, 235);
+    /* Color azul claro al pasar el mouse */
+}
+
+ion-icon.tab-selected {
+    color: rgb(28, 1, 53);
+    /* Color azul claro cuando el ícono está activo */
 }

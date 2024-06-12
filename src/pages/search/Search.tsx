@@ -38,7 +38,7 @@ const Search: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent fullscreen>
+      <IonContent>
         <IonSearchbar
           showClearButton="always"
           animated={true}
