@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import { fetchAllData } from "../../utils/loadActivity";
 import "./activities.css";
+import Activity from "./Activity";
 
 const data = fetchAllData();
 
@@ -24,17 +25,7 @@ const AllActivities: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         {activities?.map((el: any, i: number) => (
-          <IonCard key={el.title + i} title={el.title}>
-            <IonCardHeader>
-              <IonCardTitle>{el.title}</IonCardTitle>
-            </IonCardHeader>
-            <IonCardContent>
-              {el.title}
-              <IonButton routerLink={`/activities/${el.category}/${el.id}`}>
-                Ver
-              </IonButton>
-            </IonCardContent>
-          </IonCard>
+          <Activity key={el.title + i} activity={el} />
         ))}
       </IonContent>
     </IonPage>

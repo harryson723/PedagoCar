@@ -9,32 +9,31 @@ import {
 } from "@ionic/react";
 import { useState } from "react";
 import "./search.css";
-
-const data = [
-  "Amsterdam",
-  "Buenos Aires",
-  "Cairo",
-  "Geneva",
-  "Hong Kong",
-  "Istanbul",
-  "London",
-  "Madrid",
-  "New York",
-  "Panama City",
-];
+import { fetchDataAndSearchByKeyword } from "../../utils/loadActivity";
+import { ActivityType } from "../../utils/types";
+import Activity from "../../components/activities/Activity";
 
 const Search: React.FC = () => {
-  const [results, setResults] = useState([...data]);
+  const [results, setResults] = useState<ActivityType[]>([]);
   const [showQuery, setShowQuery] = useState(false);
 
   const handleInput = (ev: Event) => {
     let query = "";
     const target = ev.target as HTMLIonSearchbarElement;
     if (target) query = target.value!.toLowerCase();
-    const filter = data.filter((d) => d.toLowerCase().indexOf(query) > -1);
-    setResults(filter);
-    if (filter.length > 0 && query != "") setShowQuery(true);
-    else setShowQuery(false);
+
+    fetchDataAndSearchByKeyword(query) // Asegúrate de proporcionar la categoría
+      .then((result) => {
+        if (typeof result === 'string') {
+          setResults([]);
+        } else {
+          setResults(result);
+          if (result.length > 0 && query != "") setShowQuery(true);
+          else setShowQuery(false);
+        }
+      })
+      .catch((error) => {
+      });
   };
 
   return (
@@ -46,11 +45,13 @@ const Search: React.FC = () => {
           placeholder="¿Qué estás buscando hoy?"
           onIonInput={(ev) => handleInput(ev)}
         ></IonSearchbar>
-
+        {showQuery && results.length == 0 && (
+          <IonTitle>No hay actividades para esta palabra</IonTitle>
+        )}
         {showQuery && (
           <IonList>
-            {results.map((result) => (
-              <IonItem>{result}</IonItem>
+            {results.map((result, i) => (
+              <Activity key={result.title + i} activity={result} />
             ))}
           </IonList>
         )}
