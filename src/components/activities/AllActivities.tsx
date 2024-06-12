@@ -22,13 +22,14 @@ const AllActivities: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonTitle>Actividades</IonTitle>
+        <IonTitle class="ion-text-center bg-white text-black">Actividades</IonTitle>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent >
+        <section className="h-full bodybgs">
         {activities?.map((el: any, i: number) => (
-          <IonCard key={el.title + i} title={el.title}>
+          <IonCard key={el.title + i} title={el.title} >
             <IonCardHeader>
-              <IonCardTitle>{el.title}</IonCardTitle>
+              <IonCardTitle className="text-center">{el.title}</IonCardTitle>
             </IonCardHeader>
             <IonCardContent>
               {el.title}
@@ -38,6 +39,7 @@ const AllActivities: React.FC = () => {
             </IonCardContent>
           </IonCard>
         ))}
+        </section>        
       </IonContent>
     </IonPage>
   );

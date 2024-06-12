@@ -47,11 +47,11 @@ interface Activity {
 
 const initialActivity: Activity = {
   id: "1",
-  title: "saltar",
-  category: "saltar",
-  keywords: "saltar",
-  purpose: "saltar",
-  description: "saltar",
+  title: "Saltar",
+  category: "Saltar",
+  keywords: "Saltar",
+  purpose: "Saltar",
+  description: "Saltar",
   materials: ["cuerda"],
   variables: "variables",
   psycomotor: [
