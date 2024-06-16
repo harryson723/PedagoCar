@@ -9,4 +9,5 @@ export type ActivityType = {
     variables: string;
     psycomotor: { title: string; description: string }[];
     extraInfo: { title: string; description: string }[];
+    img: string;
 };

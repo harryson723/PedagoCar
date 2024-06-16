@@ -39,22 +39,27 @@ const Search: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <IonSearchbar
-          showClearButton="always"
-          animated={true}
-          placeholder="¿Qué estás buscando hoy?"
-          onIonInput={(ev) => handleInput(ev)}
-        ></IonSearchbar>
-        {showQuery && results.length == 0 && (
-          <IonTitle>No hay actividades para esta palabra</IonTitle>
-        )}
-        {showQuery && (
-          <IonList>
-            {results.map((result, i) => (
-              <Activity key={result.title + i} activity={result} />
-            ))}
-          </IonList>
-        )}
+        <section className="bodybgs min-h-full">
+          <div className="h-[100vh] flex flex-col ">
+            <IonSearchbar
+              showClearButton="always"
+              animated={true}
+              placeholder="¿Qué estás buscando hoy?"
+              onIonInput={(ev) => handleInput(ev)}
+            ></IonSearchbar>
+            {showQuery && results.length == 0 && (
+              <IonTitle>No hay actividades para esta palabra</IonTitle>
+            )}
+            {showQuery && (
+              <IonList>
+                {results.map((result, i) => (
+                  <Activity key={result.title + i} activity={result} />
+                ))}
+              </IonList>
+            )}
+          </div>
+        </section>
+
       </IonContent>
     </IonPage>
   );

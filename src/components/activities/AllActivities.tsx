@@ -21,7 +21,7 @@ const AllActivities: React.FC = () => {
   return (
     <IonPage>
       <IonHeader className="w-full h-7">
-        <IonTitle class="ion-text-center bg-white text-black">
+        <IonTitle class="ion-text-center text-black">
           Actividades
         </IonTitle>
       </IonHeader>
