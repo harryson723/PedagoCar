@@ -40,24 +40,26 @@ ion-icon.tab-selected {
 }
 
 .bodybgs .infosugg {
-    background-color: #ffffff;
+    background-color: rgb(85, 6, 158);
     width: 90%;
     border-radius: 20px;
     padding: 20px;
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
-.bodybgs .infosugg .texth1 {
+.parragraphp1 {
+    color: #FFF;
+    text-align: left;
+    font-size: 20px;
+}
+
+.texth1 {
     text-transform: uppercase;
     font-weight: bold;
     margin: 20px;
-    font-size: 20px;
+    font-size: 25px;
+    color: #FFF;
     text-align: center;
-}
-
-.bodybgs .infosugg .parragraphp1 {
-    font-size: 16px;
-    text-align: justify;
 }
 
 .activityBg {
@@ -76,4 +78,9 @@ ion-icon.tab-selected {
 
 .activityBtn {
     background-color: #864196;
+}
+
+ion-card img {
+    max-height: 300px;
+    width: 100%;
 }
