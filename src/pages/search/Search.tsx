@@ -40,7 +40,7 @@ const Search: React.FC = () => {
     <IonPage>
       <IonContent className="bodybgsx">
         <section className="bodybgs min-h-full">
-          <div className="h-[100vh] flex flex-col ">
+          <div className="min-h-[100vh] flex flex-col ">
             <IonSearchbar
               showClearButton="always"
               animated={true}
