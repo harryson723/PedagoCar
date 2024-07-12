@@ -38,7 +38,7 @@ const Search: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent>
+      <IonContent className="bodybgsx">
         <IonSearchbar
           showClearButton="always"
           animated={true}
@@ -49,7 +49,7 @@ const Search: React.FC = () => {
           <IonTitle>No hay actividades para esta palabra</IonTitle>
         )}
         {showQuery && (
-          <IonList>
+          <IonList className="p-0 custom-ionlist">
             {results.map((result, i) => (
               <Activity key={result.title + i} activity={result} />
             ))}

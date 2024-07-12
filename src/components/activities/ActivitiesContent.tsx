@@ -19,9 +19,9 @@ const ActivitiesContent: React.FC<ActivitiesContentProps> = ({
     <>
       <IonCard>
         <IonCardHeader className="prueba">
-          <IonCardTitle>{title}</IonCardTitle>
+          <IonCardTitle className="font-bold">{title}</IonCardTitle>
         </IonCardHeader>
-        <IonCardContent>{description}</IonCardContent>
+        <IonCardContent className="text-black">{description}</IonCardContent>
       </IonCard>
     </>
   );

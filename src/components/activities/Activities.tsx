@@ -92,7 +92,7 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar className="custom-toolbar">
           <IonButtons slot="start">
             <IonBackButton default-href="/"></IonBackButton>
           </IonButtons>
@@ -103,19 +103,27 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
         <IonHeader>
           <IonToolbar>
             <IonSegment value={showPurpose} onIonChange={handleSegment}>
-              <IonSegmentButton value="activity">
+              <IonSegmentButton
+                className="custom-segment-button"
+                value="activity"
+              >
                 <IonLabel>Actividad</IonLabel>
               </IonSegmentButton>
-              <IonSegmentButton value="purpose">
+              <IonSegmentButton
+                className="custom-segment-button"
+                value="purpose"
+              >
                 <IonLabel>Aportes</IonLabel>
               </IonSegmentButton>
             </IonSegment>
           </IonToolbar>
         </IonHeader>
-        <div>
+        <div className="bodybgs min-h-full">
           {showPurpose == "activity" ? (
-            <section>
-              <h1>Nombre: {activity.title}</h1>
+            <section >
+              <h1 className="text-center mt-5 font-bold bg-white rounded-lg py-2.5 w-[90%] mx-auto">
+                {activity.title}
+              </h1>
               <ActivitiesContent
                 title="Propósito"
                 description={activity.purpose}
@@ -127,7 +135,7 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
               <div>
                 <IonCard>
                   <IonCardHeader>
-                    <IonCardTitle>Materiales requeridos</IonCardTitle>
+                    <IonCardTitle className="font-bold">Materiales requeridos</IonCardTitle>
                   </IonCardHeader>
                   <IonCardContent>
                     {activity.materials?.map((el: string) => (
@@ -144,12 +152,12 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
               />
             </section>
           ) : (
-            <section>
-              <h2>Aportes Psicomotores</h2>
+            <section className="min-h-full justific">
+              <h2 className="text-center mt-5 font-bold bg-white rounded-lg py-2.5 w-[90%] mx-auto">Aportes Psicomotores</h2>
               {activity.psycomotor?.map((el: any) => (
                 <IonCard key={el.title}>
                   <IonCardHeader>
-                    <IonCardTitle>{el.title}</IonCardTitle>
+                    <IonCardTitle className="font-bold">{el.title}</IonCardTitle>
                   </IonCardHeader>
                   <IonCardContent>{el.description}</IonCardContent>
                 </IonCard>
