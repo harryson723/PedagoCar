@@ -1,0 +1,35 @@
+.activityBg {
+    background-color: white; /* Morado oscuro */
+    color: #fff;
+    border-radius: 10px; /* Bordes redondeados para la tarjeta */
+    margin-bottom: 20px;
+  }
+  
+  .activityTitle {
+    color: black; /* Morado claro */
+    font-size: 1.5rem; /* Tamaño de fuente aumentado */
+    text-align: center; /* Centrar el título */
+  }
+  
+  .activityBtn {
+    --background: #c074f3; /* Morado medio */
+    color: #55069e;
+    --background-activated: #8E24AA; /* Morado intermedio más oscuro */
+    --background-focused: #8E24AA;
+    --background-hover: #8E24AA;
+    --color: #fff; /* Blanco para el texto */
+    border-radius: 15px;
+    margin-top: 10px;
+    transition: transform 0.2s, box-shadow 0.2s; /* Transición para hover */
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .activityBtn:hover {
+    transform: translateY(-2px); /* Mover el botón hacia arriba en hover */
+  }
+  
+  .activityBtn:active {
+    transform: translateY(0); /* Restaurar posición en active */
+  }
+  

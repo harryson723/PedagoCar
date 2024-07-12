@@ -7,6 +7,13 @@ export type ActivityType = {
     description: string;
     materials: string[];
     variables: string;
-    psycomotor: { title: string; description: string }[];
-    extraInfo: { title: string; description: string }[];
+    psycomotor: {
+        title: string;
+        description: string;
+    }[];
+    extraInfo: {
+        title: string;
+        description: string;
+    }[];
+    img: string;
 };
