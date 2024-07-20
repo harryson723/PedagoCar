@@ -32,20 +32,20 @@ const Activity: React.FC<ActivityProps> = ({ activity }) => {
     history.push(`/activities/${activity.category}/${activity.id}`);
   };
   return (
-    <IonCard title={activity.title} className="activityBg">
-      <img src={activity.img} alt="" />
-      <IonCardHeader>
-        <IonCardTitle className="activityTitle font-bold">{activity.title}</IonCardTitle>
-      </IonCardHeader>
-      <IonCardContent className="flex flex-col">
-        <p className="h-20 overflow-hidden overflow-y-scroll text-black">{activity.description}</p>
-        <IonButton 
-          className="activityBtn custom-button"
-          onClick={handleClick}
-        >
-          Ver
-        </IonButton>
-      </IonCardContent>
+    <IonCard
+      title={activity.title}
+      className="activityBg flex flex-row"
+      onClick={handleClick}
+    >
+      <img src={activity.img} alt="" className="w-[50%]"/>
+      <div className="flex flex-col w-[50%]">
+        <IonCardHeader>
+          <IonCardTitle className="activityTitle font-bold">{activity.title}</IonCardTitle>
+        </IonCardHeader>
+        <IonCardContent className="flex flex-col">
+          <p className="h-20 overflow-hidden overflow-y-scroll text-black">{activity.description}</p>
+        </IonCardContent>
+      </div>
     </IonCard>
   );
 };

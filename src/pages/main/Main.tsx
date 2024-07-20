@@ -1,37 +1,64 @@
-import { IonContent, IonPage, IonText, IonTitle } from "@ionic/react";
+import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonText, IonTitle, IonToolbar } from "@ionic/react";
 import "./main.scss"; // Asegúrate de importar el archivo SCSS
 import { generateSuggestions } from "../../utils/loadActivity";
 import { useContext, useEffect, useState } from "react";
 import Activity from "../../components/activities/Activity";
 import { UserContext } from "../../components/context/UserContext";
+import MainButton from "../../components/MainButton";
+import { arrowForward } from 'ionicons/icons';
 
 const Main: React.FC = () => {
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const { update } = useContext(UserContext);
-  
+
   useEffect(() => {
     setSuggestions(generateSuggestions());
   }, [update]);
+
+  const seeMore = () => {
+
+  };
+
   return (
     <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>PIAPP</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonContent className="bodybg min-h-full">
-        <div >
+        <section className="why-us">
+          <h1>¿Porqué esta app?</h1>
+          <p>
+            Imagina un mundo donde los niños aprenden y desarrollan sus habilidades psicomotrices jugando. Este libro es tu guía para crear actividades lúdicas y educativas, transformando la rutina en una emocionante aventura. Promovamos juntos una infancia activa y saludable, ¡donde cada día sea una oportunidad para divertirse y crecer!
+          </p>
+          <MainButton text="VER MÁS" onClick={seeMore} />
+        </section>
+        <section className="categories">
           <div>
-            <img src="/img/girl.png" alt="" />
-            {suggestions.length > 0 ?
-              <IonText color="dark" class="texth1">
-                <h1>¡Descubre las actividades perfectas para ti!</h1>
-              </IonText> :
-              <IonText color="dark" class="texth1">
-                <h1>¡Interactúa con las actividades para recibir recomendaciones personalizadas!</h1>
-              </IonText>}
+            <h2>CATEGORIAS DE APORTE PSICOMOTOR</h2>
+            <div>
+              <MainButton text="MOTOR" onClick={seeMore} />
+              <MainButton text="COGNITIVO" onClick={seeMore} />
+            </div>
           </div>
-          <section>
-            {suggestions?.map((el: any, i: number) => (
-              <Activity key={el.title + i} activity={el} />
-            ))}
-          </section>
-        </div>
+          <div>
+            <h2>CATEGORIAS DE APORTE CON PELOTA</h2>
+            <div>
+              <MainButton text="TIRO" onClick={seeMore} />
+              <MainButton text="AGARRAR" onClick={seeMore} />
+            </div>
+          </div>
+        </section>
+        <section className="popular-activities">
+          <div>
+            <h2>ACTIVIDADES POPULARES</h2>
+            <IonButton fill="clear">
+              ver todas
+              <IonIcon slot="end" icon={arrowForward}></IonIcon>
+            </IonButton>
+          </div>
+        </section>
       </IonContent>
     </IonPage>
   );

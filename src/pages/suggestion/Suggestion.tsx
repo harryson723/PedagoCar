@@ -7,8 +7,15 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import "./suggestion.css";
+import { useHistory } from "react-router";
 
 const Suggestion: React.FC = () => {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push(`/addActivity`);
+  };
+
   return (
     <IonPage>
       <IonContent>
@@ -38,6 +45,7 @@ const Suggestion: React.FC = () => {
               Únete a nosotros en esta misión de promover una infancia activa y saludable. Juntos, podemos hacer de cada día una oportunidad para aprender, crecer y, sobre todo, ¡divertirse!
             </p>
           </div>
+          <button onClick={handleClick}>Crear actividad</button>
         </section>
       </IonContent>
     </IonPage>

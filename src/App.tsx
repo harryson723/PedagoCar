@@ -8,7 +8,7 @@ import {
   IonTabs,
   setupIonicReact,
 } from "@ionic/react";
-import { help, home, search, reorderFour } from "ionicons/icons";
+import { help, home, search, reorderFour, addCircle } from "ionicons/icons";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -38,6 +38,7 @@ import Search from "./pages/search/Search";
 import Suggestion from "./pages/suggestion/Suggestion";
 import AllActivities from "./components/activities/AllActivities";
 import Activities from "./components/activities/Activities";
+import AddActivity from "./pages/AddActivity/AddActivity";
 
 setupIonicReact();
 
@@ -51,6 +52,7 @@ const App: React.FC = () => (
           <Route path="/all" component={AllActivities} />
           <Route path="/activities/:category/:id" component={Activities} />
           <Route exact path="/suggestions" component={Suggestion} />
+          <Route exact path="/addActivity" component={AddActivity} />
           <Redirect exact from="/" to="/main" />
         </IonRouterOutlet>
         <IonTabBar slot="bottom" >
@@ -59,6 +61,9 @@ const App: React.FC = () => (
           </IonTabButton>
           <IonTabButton tab="search" href="/search">
             <IonIcon icon={search} />
+          </IonTabButton>
+          <IonTabButton tab="addActivity" href="/addActivity">
+            <IonIcon icon={addCircle} />
           </IonTabButton>
           <IonTabButton tab="all" href="/all">
             <IonIcon icon={reorderFour} />
