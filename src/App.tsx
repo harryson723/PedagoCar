@@ -8,7 +8,17 @@ import {
   IonTabs,
   setupIonicReact,
 } from "@ionic/react";
+
+import React from 'react';
+import { SplashScreen } from '@capacitor/splash-screen';
+import { StatusBar, Style } from '@capacitor/status-bar';
 import { help, home, search, reorderFour, addCircle } from "ionicons/icons";
+
+import CustomHome from './assets/icons/HomeNew.svg';
+import CustomActivities from './assets/icons/ActivitiesNew.svg';
+import CustomSearch from './assets/icons/SerachNew.svg';
+import CustomProfile from './assets/icons/ProfileNew.svg';
+import CustomAdd from './assets/icons/AddNew.svg';
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -42,7 +52,12 @@ import AddActivity from "./pages/AddActivity/AddActivity";
 
 setupIonicReact();
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  React.useEffect(() => {
+    SplashScreen.hide();
+    StatusBar.setStyle({ style: Style.Dark });
+  }, []);
+  return (
   <IonApp className="basics">
     <IonReactRouter>
       <IonTabs >
@@ -57,24 +72,25 @@ const App: React.FC = () => (
         </IonRouterOutlet>
         <IonTabBar slot="bottom" >
           <IonTabButton tab="main" href="/main">
-            <IonIcon icon={home} />
+            <IonIcon icon={CustomHome} />
           </IonTabButton>
           <IonTabButton tab="search" href="/search">
-            <IonIcon icon={search} />
+            <IonIcon icon={CustomSearch} />
           </IonTabButton>
           <IonTabButton tab="addActivity" href="/addActivity">
-            <IonIcon icon={addCircle} />
+            <IonIcon icon={CustomAdd} />
           </IonTabButton>
           <IonTabButton tab="all" href="/all">
-            <IonIcon icon={reorderFour} />
+            <IonIcon icon={CustomActivities} />
           </IonTabButton>
           <IonTabButton tab="suggestions" href="/suggestions">
-            <IonIcon icon={help} />
+            <IonIcon icon={CustomProfile} />
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
   </IonApp>
-);
+  );
+};
 
 export default App;
