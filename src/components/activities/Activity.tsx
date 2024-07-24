@@ -37,7 +37,7 @@ const Activity: React.FC<ActivityProps> = ({ activity }) => {
       className="activityBg flex flex-row"
       onClick={handleClick}
     >
-      <img src={activity.img} alt="" className="w-[50%]"/>
+      <img src={activity.img.replace('dataimage', 'data:image').replace('base64', ';base64,')} alt="" className="w-[50%]"/>
       <div className="flex flex-col w-[50%]">
         <IonCardHeader>
           <IonCardTitle className="activityTitle font-bold">{activity.title}</IonCardTitle>

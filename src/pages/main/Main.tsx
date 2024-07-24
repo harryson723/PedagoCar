@@ -36,10 +36,15 @@ const Main: React.FC = () => {
         </section>
         <section className="categories">
           <div>
-            <h2>CATEGORIAS DE APORTE PSICOMOTOR</h2>
+            <h2>HABILIDADES MOTORAS</h2>
             <div>
-              <MainButton text="MOTOR" onClick={seeMore} />
-              <MainButton text="COGNITIVO" onClick={seeMore} />
+              <MainButton text="DESPLAZAMIENTO" onClick={seeMore} />
+              <MainButton text="SALTO" onClick={seeMore} />
+              <MainButton text="PATEO" onClick={seeMore} />
+              <MainButton text="LANZAR" onClick={seeMore} />
+              <MainButton text="RECIBIR" onClick={seeMore} />
+              <MainButton text="REBOTAR" onClick={seeMore} />
+              <MainButton text="GOLPEAR" onClick={seeMore} />
             </div>
           </div>
           <div>

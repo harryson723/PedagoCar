@@ -9,15 +9,21 @@ import {
   IonPage,
   IonTitle,
 } from "@ionic/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchAllData } from "../../utils/loadActivity";
 import "./activities.css";
 import Activity from "./Activity";
 
-const data = fetchAllData();
-
 const AllActivities: React.FC = () => {
-  const [activities, setActivities] = useState(data);
+  const [activities, setActivities] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res =  await fetch('https://services.qalaub.com/api/ipapp');
+      setActivities(await res.json())
+    })();
+  }, []);
+
   return (
     <IonPage>
       <IonHeader className="w-full h-7">

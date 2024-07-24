@@ -16,6 +16,7 @@ interface ExtraInfo {
 interface Activity {
   title: string;
   category: string;
+  subcategory: string; // Nueva línea para subcategoría
   keywords: string;
   purpose: string;
   description: string;
@@ -30,6 +31,7 @@ const ActivityForm: React.FC = () => {
   const [activity, setActivity] = useState<Activity>({
     title: '',
     category: '',
+    subcategory: '', // Nueva línea para subcategoría
     keywords: '',
     purpose: '',
     description: '',
@@ -40,7 +42,7 @@ const ActivityForm: React.FC = () => {
     extraInfo: [{ title: '', description: '' }],
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLIonSelectElement>) => {
     const { name, value } = e.target;
     setActivity({ ...activity, [name]: value });
   };
@@ -106,7 +108,7 @@ const ActivityForm: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api.php', {
+      const response = await fetch('https://services.qalaub.com/api/ipapp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -148,6 +150,25 @@ const ActivityForm: React.FC = () => {
                 <IonSelectOption value="coordinación">Coordinación</IonSelectOption>
                 <IonSelectOption value="equilibrio">Equilibrio</IonSelectOption>
                 {/* Agrega más opciones según sea necesario */}
+              </IonSelect>
+            </IonItem>
+            <IonItem>
+              <IonLabel>Subcategoría</IonLabel>
+              <IonSelect
+                name="subcategory"
+                value={activity.subcategory}
+                onIonChange={(e: any) => handleChange(e)}
+                placeholder="Seleccione una subcategoría"
+              >
+                <IonSelectOption value="desplazamiento">Desplazamiento</IonSelectOption>
+                <IonSelectOption value="salto">Salto</IonSelectOption>
+                <IonSelectOption value="pateo">Pateo</IonSelectOption>
+                <IonSelectOption value="lanzar">Lanzar</IonSelectOption>
+                <IonSelectOption value="recibir">Recibir</IonSelectOption>
+                <IonSelectOption value="rebotar">Rebotar</IonSelectOption>
+                <IonSelectOption value="golpear">Golpear</IonSelectOption>
+                <IonSelectOption value="tiro">Tiro</IonSelectOption>
+                <IonSelectOption value="agarrar">Agarrar</IonSelectOption>
               </IonSelect>
             </IonItem>
             <IonItem>

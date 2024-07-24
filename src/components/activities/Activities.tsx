@@ -77,11 +77,10 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
 
   useEffect(() => {
     const get = async () => {
-      let activity: any = await fetchDataAndSearchById(
-        match.params.id,
-        match.params.category
-      );
-      setActivity(activity);
+      let activity: any = await fetch(`https://services.qalaub.com/api/ipapp?id=${match.params.id}`);
+      let newActivity = await activity.json();
+      newActivity.materials = newActivity.materials.split(',');
+      setActivity(newActivity);
     };
     get();
   }, []);
