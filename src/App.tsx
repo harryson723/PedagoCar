@@ -70,7 +70,7 @@ const App: React.FC = () => {
           <Route exact path="/addActivity" component={AddActivity} />
           <Redirect exact from="/" to="/main" />
         </IonRouterOutlet>
-        <IonTabBar slot="bottom" >
+        <IonTabBar className="hometab" slot="bottom" >
           <IonTabButton tab="main" href="/main">
             <IonIcon icon={CustomHome} />
           </IonTabButton>
