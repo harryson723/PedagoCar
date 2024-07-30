@@ -1,12 +1,22 @@
-import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonText, IonTitle, IonToolbar } from "@ionic/react";
-import "./main.scss"; // Asegúrate de importar el archivo SCSS
+import {
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonPage,
+  IonText,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
+import "./main.css"; // Asegúrate de importar el archivo SCSS
 import { generateSuggestions } from "../../utils/loadActivity";
 import { useContext, useEffect, useState } from "react";
 import Activity from "../../components/activities/Activity";
 import { UserContext } from "../../components/context/UserContext";
 import MainButton from "../../components/MainButton";
-import { arrowForward } from 'ionicons/icons';
-
+import { arrowForward } from "ionicons/icons";
+import SplideHabilities from "./SplideHabilities";
+import SplideBall from "./SplideBall";
 
 const Main: React.FC = () => {
   const [suggestions, setSuggestions] = useState<any[]>([]);
@@ -16,50 +26,52 @@ const Main: React.FC = () => {
     setSuggestions(generateSuggestions());
   }, [update]);
 
-  const seeMore = () => {
-
-  };
+  const seeMore = () => {};
 
   return (
     <IonPage>
-      <IonHeader >
+      <IonHeader>
         <IonToolbar className="custom-toolbar">
           <IonTitle className="lilita-one-regular">PIAPP</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="min-h-full">
-        <section className="why-us w-[100%]">
-          <h1 className="text-white">¿Por qué esta <span className="text-[#f95c1c]">app?</span></h1>
+      <IonContent className="bgcolor min-h-full">
+        <section className=" why-us w-[100%]">
+          <h1 className="text-white">
+            ¿Por qué esta <span className="text-[#f95c1c]">app?</span>
+          </h1>
           <p>
-            Imagina un mundo donde los niños aprenden y desarrollan sus habilidades psicomotrices jugando. Este libro es tu guía para crear actividades lúdicas y educativas, transformando la rutina en una emocionante aventura. Promovamos juntos una infancia activa y saludable, ¡donde cada día sea una oportunidad para divertirse y crecer!
+            Imagina un mundo donde los niños aprenden y desarrollan sus
+            habilidades psicomotrices jugando. Este libro es tu guía para crear
+            actividades lúdicas y educativas, transformando la rutina en una
+            emocionante aventura. Promovamos juntos una infancia activa y
+            saludable, ¡donde cada día sea una oportunidad para divertirse y
+            crecer!
           </p>
-          <MainButton className="custom-home-button" text="VER MÁS" onClick={seeMore} />
+          <MainButton
+            className="custom-home-button"
+            text="VER MÁS"
+            onClick={seeMore}
+          />
         </section>
-        <section className="bg-{#f5f5f5} categories">
-          <div>
-            <h2>HABILIDADES MOTORAS</h2>
-            <div>
-              <MainButton text="DESPLAZAMIENTO" onClick={seeMore} />
-              <MainButton text="SALTO" onClick={seeMore} />
-              <MainButton text="PATEO" onClick={seeMore} />
-              <MainButton text="LANZAR" onClick={seeMore} />
-              <MainButton text="RECIBIR" onClick={seeMore} />
-              <MainButton text="REBOTAR" onClick={seeMore} />
-              <MainButton text="GOLPEAR" onClick={seeMore} />
+        <section className="">
+          <div className="slidersections">
+            <h2>Habilidades motoras</h2>
+            <div className="sliderhidden">
+              <SplideHabilities seeMore={seeMore} />
             </div>
           </div>
-          <div>
-            <h2>CATEGORIAS DE APORTE CON PELOTA</h2>
+          <div className="slidersections mt-5">
+            <h2>Categorias de aporte con pelota</h2>
             <div>
-              <MainButton text="TIRO" onClick={seeMore} />
-              <MainButton text="AGARRAR" onClick={seeMore} />
+              <SplideBall seeMore={seeMore} />
             </div>
           </div>
         </section>
         <section className="popular-activities">
-          <div>
-            <h2>ACTIVIDADES POPULARES</h2>
-            <IonButton fill="clear">
+          <div className="slidersections mt-5 populars">
+            <h2>Actividades populares</h2>
+            <IonButton fill="clear" className="text-[#F95715] font-bold text-left text-[10px]">
               ver todas
               <IonIcon slot="end" icon={arrowForward}></IonIcon>
             </IonButton>
