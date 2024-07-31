@@ -146,9 +146,8 @@ const ActivityForm: React.FC = () => {
                 onIonChange={(e: any) => handleChange(e)}
                 placeholder="Seleccione una categoría"
               >
-                <IonSelectOption value="movimiento">Movimiento</IonSelectOption>
-                <IonSelectOption value="coordinación">Coordinación</IonSelectOption>
-                <IonSelectOption value="equilibrio">Equilibrio</IonSelectOption>
+                <IonSelectOption value="motoras">Motoras</IonSelectOption>
+                <IonSelectOption value="pelota">Con Pelota</IonSelectOption>
                 {/* Agrega más opciones según sea necesario */}
               </IonSelect>
             </IonItem>

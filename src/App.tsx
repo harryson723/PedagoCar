@@ -63,7 +63,8 @@ const App: React.FC = () => {
       <IonTabs >
         <IonRouterOutlet>
           <Route exact path="/main" component={Main} />
-          <Route path="/search" component={Search} />
+          <Route path="/search" component={Search} />          
+          <Route path="/allfilter/:subcategory" component={AllActivities} />
           <Route path="/all" component={AllActivities} />
           <Route path="/activities/:category/:id" component={Activities} />
           <Route exact path="/suggestions" component={Suggestion} />

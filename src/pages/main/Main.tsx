@@ -17,16 +17,16 @@ import MainButton from "../../components/MainButton";
 import { arrowForward } from "ionicons/icons";
 import SplideHabilities from "./SplideHabilities";
 import SplideBall from "./SplideBall";
+import { useHistory } from "react-router";
 
 const Main: React.FC = () => {
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const { update } = useContext(UserContext);
+  const history = useHistory();
 
   useEffect(() => {
     setSuggestions(generateSuggestions());
   }, [update]);
-
-  const seeMore = () => {};
 
   return (
     <IonPage>
@@ -51,27 +51,31 @@ const Main: React.FC = () => {
           <MainButton
             className="custom-home-button"
             text="VER MÁS"
-            onClick={seeMore}
+            onClick={() => {history.push(`/suggestions`)}}
           />
         </section>
         <section className="">
           <div className="slidersections">
             <h2>Habilidades motoras</h2>
             <div className="sliderhidden">
-              <SplideHabilities seeMore={seeMore} />
+              <SplideHabilities />
             </div>
           </div>
           <div className="slidersections mt-5">
             <h2>Categorias de aporte con pelota</h2>
             <div>
-              <SplideBall seeMore={seeMore} />
+              <SplideBall />
             </div>
           </div>
         </section>
         <section className="popular-activities">
           <div className="slidersections mt-5 populars">
             <h2>Actividades populares</h2>
-            <IonButton fill="clear" className="text-[#F95715] font-bold text-left text-[10px]">
+            <IonButton
+              fill="clear"
+              className="text-[#F95715] font-bold text-left text-[10px]"
+              onClick={() => {history.push(`/all`)}}
+            >
               ver todas
               <IonIcon slot="end" icon={arrowForward}></IonIcon>
             </IonButton>

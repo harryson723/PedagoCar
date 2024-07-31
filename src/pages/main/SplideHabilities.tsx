@@ -3,16 +3,19 @@ import Splide from "@splidejs/splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import MainButton from "../../components/MainButton";
 import "./main.css";
+import { useHistory } from "react-router";
 
 interface SplideHabilitiesProps {
-  seeMore: () => void;
+
 }
 
 const truncateText = (text: string, maxLength: number) => {
   return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
 };
 
-const SplideHabilities: React.FC<SplideHabilitiesProps> = ({ seeMore }) => {
+const SplideHabilities: React.FC<SplideHabilitiesProps> = () => {
+  const history = useHistory();
+
   useEffect(() => {
     new Splide(".splide-habilities", {
       type: "loop",
@@ -32,49 +35,49 @@ const SplideHabilities: React.FC<SplideHabilitiesProps> = ({ seeMore }) => {
           <li className="splide__slide">
             <MainButton
               text={truncateText("DESPLAZAMIENTO", 7)}
-              onClick={seeMore}
+              onClick={() => {history.push('/allfilter/desplazamiento')}}
               className="buttontruncate rounded-lg"
             />
           </li>
           <li className="splide__slide">
             <MainButton
               text={truncateText("SALTO", 7)}
-              onClick={seeMore}
+              onClick={() => {history.push('/allfilter/salto')}}
               className="buttontruncate rounded-lg"
             />
           </li>
           <li className="splide__slide">
             <MainButton
               text={truncateText("PATEO", 7)}
-              onClick={seeMore}
+              onClick={() => {history.push('/allfilter/pateo')}}
               className="buttontruncate rounded-lg"
             />
           </li>
           <li className="splide__slide">
             <MainButton
               text={truncateText("LANZAR", 7)}
-              onClick={seeMore}
+              onClick={() => {history.push('/allfilter/lanzar')}}
               className="buttontruncate rounded-lg"
             />
           </li>
           <li className="splide__slide">
             <MainButton
               text={truncateText("RECIBIR", 7)}
-              onClick={seeMore}
+              onClick={() => {history.push('/allfilter/recibir')}}
               className="buttontruncate rounded-lg"
             />
           </li>
           <li className="splide__slide">
             <MainButton
               text={truncateText("REBOTAR", 7)}
-              onClick={seeMore}
+              onClick={() => {history.push('/allfilter/rebotar')}}
               className="buttontruncate rounded-lg"
             />
           </li>
           <li className="splide__slide">
             <MainButton
               text={truncateText("GOLPEAR", 7)}
-              onClick={seeMore}
+              onClick={() => {history.push('/allfilter/golpear')}}
               className="buttontruncate rounded-lg"
             />
           </li>
