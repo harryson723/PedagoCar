@@ -36,7 +36,7 @@ const AllActivities: React.FC<ActivitiesProps> = ({ match }) => {
   return (
     <IonPage>
       <IonHeader className="w-full h-7">
-        <IonTitle class="ion-text-center text-black">
+        <IonTitle class="custom-activitiesbar ion-text-center text-white">
           Actividades
         </IonTitle>
       </IonHeader>
