@@ -15,6 +15,7 @@
   border-radius: 20px;
   padding: 20px;
   margin: 20px 0px;
+  box-shadow: 2px 2px 2px rgba(48, 48, 48, 0.486);
 }
 .bodybgs .infosugg h2 {
   font-family: "Roboto", sans-serif;
