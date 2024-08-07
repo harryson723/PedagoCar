@@ -33,20 +33,30 @@ const Activity: React.FC<ActivityProps> = ({ activity }) => {
   };
   return (
     <IonCard
-      title={activity.title}
-      className="activityBg flex flex-row"
-      onClick={handleClick}
-    >
-      <img src={activity.img.replace('dataimage', 'data:image').replace('base64', ';base64,')} alt="" className="w-[50%]"/>
-      <div className="flex flex-col w-[50%]">
-        <IonCardHeader>
-          <IonCardTitle className="activityTitle font-bold">{activity.title}</IonCardTitle>
-        </IonCardHeader>
-        <IonCardContent className="flex flex-col">
-          <p className="h-20 overflow-hidden overflow-y-scroll text-black">{activity.description}</p>
-        </IonCardContent>
-      </div>
-    </IonCard>
+  title={activity.title}
+  className="activityBg flex flex-row h-56"
+  onClick={handleClick}
+>
+  <div className="w-[50%] overflow-hidden">
+    <img
+      src={activity.img.replace('dataimage', 'data:image').replace('base64', ';base64,')}
+      alt=""
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="flex flex-col w-[50%]">
+    <IonCardHeader>
+      <IonCardTitle className="activityTitle font-bold">
+        {activity.title}
+      </IonCardTitle>
+    </IonCardHeader>
+    <IonCardContent className="flex flex-col">
+      <p className="h-36 overflow-hidden overflow-y-scroll text-black text-justify">
+        {activity.description}
+      </p>
+    </IonCardContent>
+  </div>
+</IonCard>
   );
 };
 
