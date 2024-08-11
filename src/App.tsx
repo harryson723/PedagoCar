@@ -84,7 +84,6 @@ const App: React.FC = () => {
     initStorage();
 
     SplashScreen.hide();
-    StatusBar.setStyle({ style: Style.Dark });
   }, []);
 
   // Función para guardar datos
