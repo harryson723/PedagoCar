@@ -87,7 +87,6 @@
 }
 
 .buttontruncate {
-  
   overflow: visible;
   margin: 0 10px;
   white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
@@ -113,22 +112,80 @@
   }
 }
 
-.slidersections{
+.slidersections {
   background-color: #ffffff;
   padding: 20px 0px;
-  h2{
+  h2 {
     font-family: "Poppins", sans-serif;
     font-style: normal;
-    margin: 20px;    
+    margin: 20px;
     margin-top: 0;
     font-size: 16px;
     font-weight: bold;
   }
 }
 
-.populars{
+.populars {
   display: flex;
-  h2{
+  h2 {
     margin-top: 20px;
   }
+}
+
+.select_roll_container {
+  --background: none;
+  background: linear-gradient(to bottom, #c624ff 20%, #ff864e 100%),
+    linear-gradient(to bottom, transparent 50%, #ffffff 60%);
+  background-size:
+    100% 50%,
+    100% 50%;
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.select_roll_container ion-select {
+  width: 100%;
+  max-width: 400px;
+}
+
+.select_roll_container ion-button {
+  --background: none;
+  background: linear-gradient(to bottom, #c624ff -100%, #ff864e 100%);
+  border-radius: 100%;
+}
+
+.edit_shadow {
+  box-shadow:
+    0 0px 6px 2px rgba(0, 0, 0, 0.4),
+}
+
+.edit_shadow2 {
+  box-shadow:
+    0 10px 5px -1px rgba(0, 0, 0, 0.4)
+}
+
+.no-focus-indicator ion-select {
+  --background: none;
+  --box-shadow: none;
+  --outline: none;
+}
+
+/* También se puede aplicar a los elementos internos */
+.no-focus-indicator ion-select .select-text {
+  box-shadow: none;
+}
+
+.no-focus-indicator ion-select .select-icon {
+  display: none;
+}
+
+.poppins{
+  
+  font-family: "Poppins", sans-serif;
 }

@@ -11,13 +11,16 @@ import {
 import "./main.css"; // Asegúrate de importar el archivo SCSS
 import { generateSuggestions } from "../../utils/loadActivity";
 import { useContext, useEffect, useState } from "react";
-import Activity from "../../components/activities/Activity";
 import { UserContext } from "../../components/context/UserContext";
 import MainButton from "../../components/MainButton";
 import { arrowForward } from "ionicons/icons";
-import SplideHabilities from "./SplideHabilities";
-import SplideBall from "./SplideBall";
 import { useHistory } from "react-router";
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import SwiperHabilities from "./SwiperHabilities";
+import SwiperBall from "./SwiperBall";
 
 const Main: React.FC = () => {
   const [suggestions, setSuggestions] = useState<any[]>([]);
@@ -58,13 +61,13 @@ const Main: React.FC = () => {
           <div className="slidersections">
             <h2>Habilidades motoras</h2>
             <div className="sliderhidden">
-              <SplideHabilities />
+              <SwiperHabilities />
             </div>
           </div>
           <div className="slidersections mt-5">
             <h2>Categorias de aporte con pelota</h2>
             <div>
-              <SplideBall />
+              <SwiperBall />
             </div>
           </div>
         </section>
