@@ -1,7 +1,19 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import {
-  IonInput, IonButton, IonTextarea, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonContent, IonSelect, IonSelectOption
-} from '@ionic/react';
+  IonInput,
+  IonButton,
+  IonTextarea,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonPage,
+  IonContent,
+  IonSelect,
+  IonSelectOption,
+  IonHeader,
+  IonTitle,
+} from "@ionic/react";
 
 interface Psycomotor {
   title: string;
@@ -29,20 +41,24 @@ interface Activity {
 
 const ActivityForm: React.FC = () => {
   const [activity, setActivity] = useState<Activity>({
-    title: '',
-    category: '',
-    subcategory: '', // Nueva línea para subcategoría
-    keywords: '',
-    purpose: '',
-    description: '',
-    materials: [''],
-    variables: '',
+    title: "",
+    category: "",
+    subcategory: "", // Nueva línea para subcategoría
+    keywords: "",
+    purpose: "",
+    description: "",
+    materials: [""],
+    variables: "",
     img: null,
-    psycomotor: [{ title: '', description: '' }],
-    extraInfo: [{ title: '', description: '' }],
+    psycomotor: [{ title: "", description: "" }],
+    extraInfo: [{ title: "", description: "" }],
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLIonSelectElement>) => {
+  const handleChange = (
+    e: ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLIonSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
     setActivity({ ...activity, [name]: value });
   };
@@ -60,9 +76,9 @@ const ActivityForm: React.FC = () => {
 
   const handleArrayChange = (
     index: number,
-    field: 'title' | 'description',
+    field: "title" | "description",
     value: string,
-    type: 'psycomotor' | 'extraInfo'
+    type: "psycomotor" | "extraInfo"
   ) => {
     const newArray = [...activity[type]] as (Psycomotor | ExtraInfo)[];
     newArray[index] = { ...newArray[index], [field]: value };
@@ -76,7 +92,7 @@ const ActivityForm: React.FC = () => {
   };
 
   const addMaterial = () => {
-    setActivity({ ...activity, materials: [...activity.materials, ''] });
+    setActivity({ ...activity, materials: [...activity.materials, ""] });
   };
 
   const removeMaterial = (index: number) => {
@@ -86,7 +102,10 @@ const ActivityForm: React.FC = () => {
   };
 
   const addPsycomotor = () => {
-    setActivity({ ...activity, psycomotor: [...activity.psycomotor, { title: '', description: '' }] });
+    setActivity({
+      ...activity,
+      psycomotor: [...activity.psycomotor, { title: "", description: "" }],
+    });
   };
 
   const removePsycomotor = (index: number) => {
@@ -96,7 +115,10 @@ const ActivityForm: React.FC = () => {
   };
 
   const addExtraInfo = () => {
-    setActivity({ ...activity, extraInfo: [...activity.extraInfo, { title: '', description: '' }] });
+    setActivity({
+      ...activity,
+      extraInfo: [...activity.extraInfo, { title: "", description: "" }],
+    });
   };
 
   const removeExtraInfo = (index: number) => {
@@ -108,27 +130,36 @@ const ActivityForm: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://services.qalaub.com/api/ipapp', {
-        method: 'POST',
+      const response = await fetch("https://services.qalaub.com/api/ipapp", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(activity),
       });
       const data = await response.json();
-      console.log('Success:', data);
+      console.log("Success:", data);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
   return (
     <IonPage>
+      <IonHeader className="w-full h-7">
+        <IonTitle class="custom-activitiesbar ion-text-center text-white">
+          Agregar actividad
+        </IonTitle>
+      </IonHeader>
       <IonContent className="bodybgsx">
-        <section className="bodybgs h-[100vh]">
-          <form onSubmit={handleSubmit} className="overflow-scroll h-[90%] w-[90%] mt-9">
-            <IonItem>
+        <section className="bodybgs  min-h-[100vh]">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white overflow-scroll h-[90%] w-[90%] my-4 rounded-xl border-[#E65B8F] border-2 "
+          >
+            <IonItem className="border-b-[0.5px] flex p-3">
               <IonInput
+                className="w-full border-[#E65B8F] border-2 rounded-md"
                 label="Título"
                 labelPlacement="floating"
                 fill="outline"
@@ -138,9 +169,10 @@ const ActivityForm: React.FC = () => {
                 placeholder="Ingrese el título"
               />
             </IonItem>
-            <IonItem>
-              <IonLabel>Categoría</IonLabel>
+            <IonItem className="border-b-[0.5px] flex flex-row p-3">
+              <IonLabel position="stacked">Categoría</IonLabel>
               <IonSelect
+                className="w-full border-[#E65B8F] border-2 rounded-md mt-1.5"
                 name="category"
                 value={activity.category}
                 onIonChange={(e: any) => handleChange(e)}
@@ -151,15 +183,18 @@ const ActivityForm: React.FC = () => {
                 {/* Agrega más opciones según sea necesario */}
               </IonSelect>
             </IonItem>
-            <IonItem>
-              <IonLabel>Subcategoría</IonLabel>
+            <IonItem className="border-b-[0.5px] flex flex-row p-3">
+              <IonLabel position="stacked">Subcategoría</IonLabel>
               <IonSelect
+                className="w-full border-[#E65B8F] border-2 rounded-md mt-1.5"
                 name="subcategory"
                 value={activity.subcategory}
                 onIonChange={(e: any) => handleChange(e)}
                 placeholder="Seleccione una subcategoría"
               >
-                <IonSelectOption value="desplazamiento">Desplazamiento</IonSelectOption>
+                <IonSelectOption value="desplazamiento">
+                  Desplazamiento
+                </IonSelectOption>
                 <IonSelectOption value="salto">Salto</IonSelectOption>
                 <IonSelectOption value="pateo">Pateo</IonSelectOption>
                 <IonSelectOption value="lanzar">Lanzar</IonSelectOption>
@@ -170,40 +205,37 @@ const ActivityForm: React.FC = () => {
                 <IonSelectOption value="agarrar">Agarrar</IonSelectOption>
               </IonSelect>
             </IonItem>
-            <IonItem>
+            <IonItem className="border-b-[0.5px] flex flex-row p-3">
+              <IonLabel position="stacked">Palabras clave</IonLabel>
               <IonTextarea
-                label="Palabras clave"
-                labelPlacement="floating"
-                fill="outline"
+                className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                 name="keywords"
                 value={activity.keywords}
                 onIonChange={(e: any) => handleChange(e)}
                 placeholder="Ingrese las palabras clave"
               />
             </IonItem>
-            <IonItem>
+            <IonItem className="border-b-[0.5px] flex flex-row p-3">
+              <IonLabel position="stacked">Propósito</IonLabel>
               <IonTextarea
-                label="Propósito"
-                labelPlacement="floating"
-                fill="outline"
+                className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                 name="purpose"
                 value={activity.purpose}
                 onIonChange={(e: any) => handleChange(e)}
                 placeholder="Ingrese el propósito"
               />
             </IonItem>
-            <IonItem>
+            <IonItem className="border-b-[0.5px] flex flex-row p-3">
+              <IonLabel position="stacked">Descripción</IonLabel>
               <IonTextarea
-                label="Descripción"
-                labelPlacement="floating"
-                fill="outline"
+                className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                 name="description"
                 value={activity.description}
                 onIonChange={(e: any) => handleChange(e)}
                 placeholder="Ingrese la descripción"
               />
             </IonItem>
-            <IonList>
+            <IonList className="border-b-[0.5px] flex flex-col p-3">
               <IonListHeader>
                 <IonLabel>Materiales</IonLabel>
               </IonListHeader>
@@ -212,83 +244,153 @@ const ActivityForm: React.FC = () => {
                   <IonInput
                     placeholder={`Material ${index + 1}`}
                     value={material}
-                    onIonChange={(e: CustomEvent) => handleMaterialChange(index, (e.target as HTMLInputElement).value)}
+                    onIonChange={(e: CustomEvent) =>
+                      handleMaterialChange(
+                        index,
+                        (e.target as HTMLInputElement).value
+                      )
+                    }
                   />
-                  <IonButton onClick={() => removeMaterial(index)}>Eliminar</IonButton>
+                  <IonButton
+                    style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                    onClick={() => removeMaterial(index)}
+                  >
+                    Eliminar
+                  </IonButton>
                 </IonItem>
               ))}
-              <IonButton onClick={addMaterial}>Agregar Material</IonButton>
+              <IonButton
+                style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                onClick={addMaterial}
+              >
+                Agregar Material
+              </IonButton>
             </IonList>
-            <IonItem>
+            <IonItem className="border-b-[0.5px] flex flex-row p-3">
+              <IonLabel position="stacked">Variables</IonLabel>
               <IonTextarea
-                label="Variables"
-                labelPlacement="floating"
-                fill="outline"
+                className="w-full h-[15vh] border-[#E65B8F] border-2 rounded-md my-1.5"
                 name="variables"
                 value={activity.variables}
                 onIonChange={(e: any) => handleChange(e)}
                 placeholder="Ingrese las variables"
               />
             </IonItem>
-            <IonItem>
-              <IonLabel>Imagen</IonLabel>
-              <input type="file" onChange={handleImageChange} />
+            <IonItem className="border-b-[0.5px] flex flex-row p-3">
+              <IonLabel position="stacked">Imagen</IonLabel>
+              <input
+                className="w-full rounded-md my-1.5 flex flex-col"
+                type="file"
+                onChange={handleImageChange}
+              />
             </IonItem>
-            <IonList>
+            <IonList className="border-b-[0.5px] flex flex-col p-3">
               <IonListHeader>
                 <IonLabel>Psicomotor</IonLabel>
               </IonListHeader>
               {activity.psycomotor.map((item, index) => (
                 <IonItem key={index}>
+                  <IonLabel position="stacked">Título</IonLabel>
                   <IonInput
-                    label="Título"
-                    labelPlacement="floating"
-                    fill="outline"
+                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                     placeholder="Título"
                     value={item.title}
-                    onIonChange={(e: CustomEvent) => handleArrayChange(index, 'title', (e.target as HTMLInputElement).value, 'psycomotor')}
+                    onIonChange={(e: CustomEvent) =>
+                      handleArrayChange(
+                        index,
+                        "title",
+                        (e.target as HTMLInputElement).value,
+                        "psycomotor"
+                      )
+                    }
                   />
+                  <IonLabel position="stacked">Descripción</IonLabel>
                   <IonTextarea
-                    label="Descripción"
-                    labelPlacement="floating"
-                    fill="outline"
+                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                     placeholder="Descripción"
                     value={item.description}
-                    onIonChange={(e: CustomEvent) => handleArrayChange(index, 'description', (e.target as HTMLTextAreaElement).value, 'psycomotor')}
+                    onIonChange={(e: CustomEvent) =>
+                      handleArrayChange(
+                        index,
+                        "description",
+                        (e.target as HTMLTextAreaElement).value,
+                        "psycomotor"
+                      )
+                    }
                   />
-                  <IonButton onClick={() => removePsycomotor(index)}>Eliminar</IonButton>
+                  <IonButton
+                    style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                    onClick={() => removePsycomotor(index)}
+                  >
+                    Eliminar
+                  </IonButton>
                 </IonItem>
               ))}
-              <IonButton onClick={addPsycomotor}>Agregar Psicomotor</IonButton>
+              <IonButton
+                style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                onClick={addPsycomotor}
+              >
+                Agregar Psicomotor
+              </IonButton>
             </IonList>
-            <IonList>
+            <IonList className="border-b-[0.5px] flex flex-col p-3">
               <IonListHeader>
                 <IonLabel>Información adicional</IonLabel>
               </IonListHeader>
               {activity.extraInfo.map((item, index) => (
                 <IonItem key={index}>
+                  <IonLabel position="stacked">Título</IonLabel>
                   <IonInput
-                    label="Título"
-                    labelPlacement="floating"
-                    fill="outline"
+                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                     placeholder="Título"
                     value={item.title}
-                    onIonChange={(e: CustomEvent) => handleArrayChange(index, 'title', (e.target as HTMLInputElement).value, 'extraInfo')}
+                    onIonChange={(e: CustomEvent) =>
+                      handleArrayChange(
+                        index,
+                        "title",
+                        (e.target as HTMLInputElement).value,
+                        "extraInfo"
+                      )
+                    }
                   />
+                  <IonLabel position="stacked">Descripción</IonLabel>
                   <IonTextarea
-                    label="Descripción"
-                    labelPlacement="floating"
-                    fill="outline"
+                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                     placeholder="Descripción"
                     value={item.description}
-                    onIonChange={(e: CustomEvent) => handleArrayChange(index, 'description', (e.target as HTMLTextAreaElement).value, 'extraInfo')}
+                    onIonChange={(e: CustomEvent) =>
+                      handleArrayChange(
+                        index,
+                        "description",
+                        (e.target as HTMLTextAreaElement).value,
+                        "extraInfo"
+                      )
+                    }
                   />
-                  <IonButton onClick={() => removeExtraInfo(index)}>Eliminar</IonButton>
+                  <IonButton
+                    style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                    onClick={() => removeExtraInfo(index)}
+                  >
+                    Eliminar
+                  </IonButton>
                 </IonItem>
               ))}
-              <IonButton onClick={addExtraInfo}>Agregar Información Adicional</IonButton>
+              <IonButton
+                style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                onClick={addExtraInfo}
+              >
+                Agregar Información Adicional
+              </IonButton>
             </IonList>
-            <IonButton type="submit">Enviar</IonButton>
+            <div className="border-b-[0.5px] flex flex-col p-3">
+              <IonButton
+                className="w-full"
+                style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                type="submit"
+              >
+                Enviar
+              </IonButton>
+            </div>
           </form>
         </section>
       </IonContent>
