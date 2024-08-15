@@ -48,6 +48,20 @@ const SwiperBall: React.FC<SwiperBallProps> = () => {
             className="buttontruncate rounded-lg"
           />
         </div>
+        <div className="swiper-slide">
+          <MainButton
+            text={truncateText("TIRO", 7)}
+            onClick={() => { history.push('/allfilter/tiro'); }}
+            className="buttontruncate rounded-lg"
+          />
+        </div>
+        <div className="swiper-slide">
+          <MainButton
+            text={truncateText("AGARRAR", 7)}
+            onClick={() => { history.push('/allfilter/agarrar'); }}
+            className="buttontruncate rounded-lg"
+          />
+        </div>
       </div>
     </div>
   );
