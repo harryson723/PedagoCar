@@ -8,7 +8,7 @@ import MainButton from '../../components/MainButton';
 import './main.css';
 import { useHistory } from 'react-router';
 
-interface SwiperBallProps {}
+interface SwiperBallProps { }
 
 const truncateText = (text: string, maxLength: number) => {
   return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
@@ -43,15 +43,8 @@ const SwiperBall: React.FC<SwiperBallProps> = () => {
         </div>
         <div className="swiper-slide">
           <MainButton
-            text={truncateText("AGARRAR", 7)}
-            onClick={() => { history.push('/allfilter/agarrar'); }}
-            className="buttontruncate rounded-lg"
-          />
-        </div>
-        <div className="swiper-slide">
-          <MainButton
-            text={truncateText("TIRO", 7)}
-            onClick={() => { history.push('/allfilter/tiro'); }}
+            text={truncateText("PATEO", 7)}
+            onClick={() => { history.push('/allfilter/pateo'); }}
             className="buttontruncate rounded-lg"
           />
         </div>

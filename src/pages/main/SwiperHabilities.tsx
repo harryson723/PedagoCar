@@ -37,13 +37,6 @@ const SwiperHabilities: React.FC = () => {
       </SwiperSlide>
       <SwiperSlide>
         <MainButton
-          text={truncateText("PATEO", 7)}
-          onClick={() => { history.push('/allfilter/pateo'); }}
-          className="buttontruncate rounded-lg"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <MainButton
           text={truncateText("LANZAR", 7)}
           onClick={() => { history.push('/allfilter/lanzar'); }}
           className="buttontruncate rounded-lg"
