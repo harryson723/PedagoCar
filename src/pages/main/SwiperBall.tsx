@@ -27,8 +27,8 @@ const SwiperBall: React.FC = () => {
     >
       <SwiperSlide>
         <MainButton
-          text={truncateText("TIRO", 7)}
-          onClick={() => { history.push('/allfilter/tiro'); }}
+          text={truncateText("LANZAR", 7)}
+          onClick={() => { history.push('/allfilter/lanzar'); }}
           className="buttontruncate rounded-lg"
         />
       </SwiperSlide>
@@ -41,8 +41,8 @@ const SwiperBall: React.FC = () => {
       </SwiperSlide>
       <SwiperSlide>
         <MainButton
-          text={truncateText("AGARRAR", 7)}
-          onClick={() => { history.push('/allfilter/agarrar'); }}
+          text={truncateText("RECIBIR", 7)}
+          onClick={() => { history.push('/allfilter/recibir'); }}
           className="buttontruncate rounded-lg"
         />
       </SwiperSlide>
