@@ -157,12 +157,17 @@ const ActivityForm: React.FC = () => {
             onSubmit={handleSubmit}
             className="bg-white overflow-scroll h-[90%] w-[90%] my-4 rounded-xl border-[#E65B8F] border-2 "
           >
-            <IonItem className="border-b-[0.5px] flex p-3">
+            <IonItem className="border-b-[0.5px] flex flex-row p-3">
+              <IonLabel position="stacked">Título</IonLabel>
               <IonInput
-                className="w-full border-[#E65B8F] border-2 rounded-md"
-                label="Título"
-                labelPlacement="floating"
-                fill="outline"
+                style={{
+                  "--padding-start": "10px", // Ajusta el padding desde el inicio
+                  "--padding-end": "10px", // Ajusta el padding desde el final
+                  "--padding-top": "10px", // Ajusta el padding desde arriba
+                  "--padding-bottom": "10px", // Ajusta el padding desde abajo
+                  overflow: "hidden", // Oculta el contenido que se desborda
+                }}
+                className="w-full border-[#E65B8F] border-2 rounded-md my-1.5 custom-input"
                 name="title"
                 value={activity.title}
                 onIonChange={(e: any) => handleChange(e)}
@@ -172,6 +177,13 @@ const ActivityForm: React.FC = () => {
             <IonItem className="border-b-[0.5px] flex flex-row p-3">
               <IonLabel position="stacked">Categoría</IonLabel>
               <IonSelect
+                style={{
+                  "--padding-start": "10px", // Ajusta el padding desde el inicio
+                  "--padding-end": "10px", // Ajusta el padding desde el final
+                  "--padding-top": "10px", // Ajusta el padding desde arriba
+                  "--padding-bottom": "10px", // Ajusta el padding desde abajo
+                  overflow: "hidden", // Oculta el contenido que se desborda
+                }}
                 className="w-full border-[#E65B8F] border-2 rounded-md mt-1.5"
                 name="category"
                 value={activity.category}
@@ -186,6 +198,13 @@ const ActivityForm: React.FC = () => {
             <IonItem className="border-b-[0.5px] flex flex-row p-3">
               <IonLabel position="stacked">Subcategoría</IonLabel>
               <IonSelect
+                style={{
+                  "--padding-start": "10px", // Ajusta el padding desde el inicio
+                  "--padding-end": "10px", // Ajusta el padding desde el final
+                  "--padding-top": "10px", // Ajusta el padding desde arriba
+                  "--padding-bottom": "10px", // Ajusta el padding desde abajo
+                  overflow: "hidden", // Oculta el contenido que se desborda
+                }}
                 className="w-full border-[#E65B8F] border-2 rounded-md mt-1.5"
                 name="subcategory"
                 value={activity.subcategory}
@@ -208,6 +227,13 @@ const ActivityForm: React.FC = () => {
             <IonItem className="border-b-[0.5px] flex flex-row p-3">
               <IonLabel position="stacked">Palabras clave</IonLabel>
               <IonTextarea
+              style={{
+                '--padding-start': '10px', // Ajusta el padding desde el inicio
+                '--padding-end': '10px',   // Ajusta el padding desde el final
+                '--padding-top': '10px',   // Ajusta el padding desde arriba
+                '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                'overflow': 'hidden',     // Oculta el contenido que se desborda
+              }}
                 className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                 name="keywords"
                 value={activity.keywords}
@@ -218,6 +244,13 @@ const ActivityForm: React.FC = () => {
             <IonItem className="border-b-[0.5px] flex flex-row p-3">
               <IonLabel position="stacked">Propósito</IonLabel>
               <IonTextarea
+              style={{
+                '--padding-start': '10px', // Ajusta el padding desde el inicio
+                '--padding-end': '10px',   // Ajusta el padding desde el final
+                '--padding-top': '10px',   // Ajusta el padding desde arriba
+                '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                'overflow': 'hidden',     // Oculta el contenido que se desborda
+              }}
                 className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                 name="purpose"
                 value={activity.purpose}
@@ -228,6 +261,13 @@ const ActivityForm: React.FC = () => {
             <IonItem className="border-b-[0.5px] flex flex-row p-3">
               <IonLabel position="stacked">Descripción</IonLabel>
               <IonTextarea
+              style={{
+                '--padding-start': '10px', // Ajusta el padding desde el inicio
+                '--padding-end': '10px',   // Ajusta el padding desde el final
+                '--padding-top': '10px',   // Ajusta el padding desde arriba
+                '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                'overflow': 'hidden',     // Oculta el contenido que se desborda
+              }}
                 className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                 name="description"
                 value={activity.description}
@@ -269,6 +309,13 @@ const ActivityForm: React.FC = () => {
             <IonItem className="border-b-[0.5px] flex flex-row p-3">
               <IonLabel position="stacked">Variables</IonLabel>
               <IonTextarea
+              style={{
+                '--padding-start': '10px', // Ajusta el padding desde el inicio
+                '--padding-end': '10px',   // Ajusta el padding desde el final
+                '--padding-top': '10px',   // Ajusta el padding desde arriba
+                '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                'overflow': 'hidden',     // Oculta el contenido que se desborda
+              }}
                 className="w-full h-[15vh] border-[#E65B8F] border-2 rounded-md my-1.5"
                 name="variables"
                 value={activity.variables}
@@ -292,6 +339,13 @@ const ActivityForm: React.FC = () => {
                 <IonItem key={index}>
                   <IonLabel position="stacked">Título</IonLabel>
                   <IonInput
+                  style={{
+                    '--padding-start': '10px', // Ajusta el padding desde el inicio
+                    '--padding-end': '10px',   // Ajusta el padding desde el final
+                    '--padding-top': '10px',   // Ajusta el padding desde arriba
+                    '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                    'overflow': 'hidden',     // Oculta el contenido que se desborda
+                  }}
                     className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                     placeholder="Título"
                     value={item.title}
@@ -306,6 +360,13 @@ const ActivityForm: React.FC = () => {
                   />
                   <IonLabel position="stacked">Descripción</IonLabel>
                   <IonTextarea
+                  style={{
+                    '--padding-start': '10px', // Ajusta el padding desde el inicio
+                    '--padding-end': '10px',   // Ajusta el padding desde el final
+                    '--padding-top': '10px',   // Ajusta el padding desde arriba
+                    '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                    'overflow': 'hidden',     // Oculta el contenido que se desborda
+                  }}
                     className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                     placeholder="Descripción"
                     value={item.description}
@@ -341,6 +402,13 @@ const ActivityForm: React.FC = () => {
                 <IonItem key={index}>
                   <IonLabel position="stacked">Título</IonLabel>
                   <IonInput
+                  style={{
+                    '--padding-start': '10px', // Ajusta el padding desde el inicio
+                    '--padding-end': '10px',   // Ajusta el padding desde el final
+                    '--padding-top': '10px',   // Ajusta el padding desde arriba
+                    '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                    'overflow': 'hidden',     // Oculta el contenido que se desborda
+                  }}
                     className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                     placeholder="Título"
                     value={item.title}
@@ -355,6 +423,13 @@ const ActivityForm: React.FC = () => {
                   />
                   <IonLabel position="stacked">Descripción</IonLabel>
                   <IonTextarea
+                  style={{
+                    '--padding-start': '10px', // Ajusta el padding desde el inicio
+                    '--padding-end': '10px',   // Ajusta el padding desde el final
+                    '--padding-top': '10px',   // Ajusta el padding desde arriba
+                    '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                    'overflow': 'hidden',     // Oculta el contenido que se desborda
+                  }}
                     className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
                     placeholder="Descripción"
                     value={item.description}

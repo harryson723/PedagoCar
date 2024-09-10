@@ -58,15 +58,15 @@ const Main: React.FC = () => {
           />
         </section>
         <section className="">
-          <div className="slidersections">
+          <div className="slidersections mt-5">
             <h2>Habilidades motoras</h2>
-            <div className="sliderhidden">
+            <div className="sw-mod" >
               <SwiperHabilities />
             </div>
           </div>
           <div className="slidersections mt-5">
             <h2>Categorias de aporte con pelota</h2>
-            <div>
+            <div className="sw-mod">
               <SwiperBall />
             </div>
           </div>

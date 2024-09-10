@@ -183,4 +183,14 @@
 
 .poppins {
   font-family: "Poppins", sans-serif;
+}
+
+.sw-mod .swiper-autoheight, .sw-mod .swiper-autoheight .swiper-slide {
+  height: 80px;
+}
+.sw-mod .swiper-scrollbar {
+  z-index: 10;
+}
+.sw-mod .swiper-scrollbar-drag {
+  --swiper-scrollbar-drag-bg-color: rgb(232, 93, 139);
 }/*# sourceMappingURL=main.css.map */

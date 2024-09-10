@@ -1,62 +1,53 @@
-import React, { useEffect } from 'react';
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Scrollbar } from 'swiper/modules';
 import MainButton from '../../components/MainButton';
 import './main.css';
 import { useHistory } from 'react-router';
+import 'swiper/swiper-bundle.css';
 
-interface SwiperBallProps { }
-
-const truncateText = (text: string, maxLength: number) => {
-  return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
-};
-
-const SwiperBall: React.FC<SwiperBallProps> = () => {
+const SwiperBall: React.FC = () => {
   const history = useHistory();
 
-  useEffect(() => {
-    // Initialize Swiper
-    new Swiper('.swiper-ball', {
-      modules: [Navigation, Pagination],
-      loop: true,
-      slidesPerView: 1.5,
-      spaceBetween: 10,
-      pagination: false, // Deshabilitado para eliminar los puntos de paginación
-      navigation: false, // Deshabilitado porque no se requieren flechas de navegación
-      autoHeight: true,
-      touchStartPreventDefault: false, // Para asegurar que sea deslizable en dispositivos táctiles
-    });
-  }, []);
+  const truncateText = (text: string, maxLength: number) => {
+    return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
+  };
 
   return (
-    <div className="swiper-ball swiper">
-      <div className="swiper-wrapper">
-        <div className="swiper-slide">
-          <MainButton
-            text={truncateText("TIRO", 7)}
-            onClick={() => { history.push('/allfilter/tiro'); }}
-            className="buttontruncate rounded-lg"
-          />
-        </div>
-        <div className="swiper-slide">
-          <MainButton
-            text={truncateText("PATEO", 7)}
-            onClick={() => { history.push('/allfilter/pateo'); }}
-            className="buttontruncate rounded-lg"
-          />
-        </div>
-        <div className="swiper-slide">
-          <MainButton
-            text={truncateText("AGARRAR", 7)}
-            onClick={() => { history.push('/allfilter/agarrar'); }}
-            className="buttontruncate rounded-lg"
-          />
-        </div>
-      </div>
-    </div>
+    <Swiper
+      modules={[Scrollbar]}
+      slidesPerView={1.5}
+      spaceBetween={10}
+      loop={true}
+      autoHeight={true}
+      touchStartPreventDefault={false} // Para asegurar que sea deslizable en dispositivos táctiles
+      scrollbar={{ draggable: true }}  // Activa la scrollbar
+      className="h-20"
+    >
+      <SwiperSlide>
+        <MainButton
+          text={truncateText("TIRO", 7)}
+          onClick={() => { history.push('/allfilter/tiro'); }}
+          className="buttontruncate rounded-lg"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <MainButton
+          text={truncateText("PATEO", 7)}
+          onClick={() => { history.push('/allfilter/pateo'); }}
+          className="buttontruncate rounded-lg"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <MainButton
+          text={truncateText("AGARRAR", 7)}
+          onClick={() => { history.push('/allfilter/agarrar'); }}
+          className="buttontruncate rounded-lg"
+        />
+      </SwiperSlide>
+      {/* Agrega más SwiperSlides si es necesario */}
+    </Swiper>
   );
 };
 

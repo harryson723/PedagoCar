@@ -49,6 +49,11 @@
     letter-spacing: 3px;
  }
 
+ .custom-input {
+  padding: 8px; /* Ajusta el padding interno */
+  overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
  .custom-segment-button {
   --color: #dc5097; /* Color del texto cuando está inactivo */
   --background: transparent; /* Fondo transparente cuando está inactivo */

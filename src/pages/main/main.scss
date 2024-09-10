@@ -189,3 +189,16 @@
   
   font-family: "Poppins", sans-serif;
 }
+
+.sw-mod {
+  .swiper-autoheight, .swiper-autoheight .swiper-slide {
+    height: 80px;
+}
+  .swiper-scrollbar {
+    z-index: 10;
+  }
+  
+  .swiper-scrollbar-drag {    
+  --swiper-scrollbar-drag-bg-color: rgb(232, 93, 139);
+   }
+}
