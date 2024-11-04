@@ -13,7 +13,10 @@ import {
   IonSelectOption,
   IonHeader,
   IonTitle,
+  IonIcon,
 } from "@ionic/react";
+import { arrowForward, chevronDown, chevronUp, personOutline } from "ionicons/icons";
+import niña from "../../assets/Img/girl.webp";
 
 interface Psycomotor {
   title: string;
@@ -39,6 +42,12 @@ interface Activity {
   extraInfo: ExtraInfo[];
 }
 
+const customAlertOptions = {
+  header: "Codigo de acceso",
+  subHeader: "Ingresa el codigo",
+  translucent: true,
+};
+
 const ActivityForm: React.FC = () => {
   const [activity, setActivity] = useState<Activity>({
     title: "",
@@ -53,6 +62,9 @@ const ActivityForm: React.FC = () => {
     psycomotor: [{ title: "", description: "" }],
     extraInfo: [{ title: "", description: "" }],
   });
+  const [selectedOption, setSelectedOption] = useState<string | undefined>();
+  const [codeA, setCodeA] = useState<string | undefined>(undefined);
+  const [pass, setPass] = useState<boolean>(false);
 
   const handleChange = (
     e: ChangeEvent<
@@ -144,331 +156,383 @@ const ActivityForm: React.FC = () => {
     }
   };
 
+  const handleContinue = async () => {
+    if(codeA == 'AMDIEPCNOWQSM') setPass(true);
+  };
+
   return (
     <IonPage>
-      <IonHeader className="w-full h-7">
-        <IonTitle class="custom-activitiesbar ion-text-center text-white">
-          Agregar actividad
-        </IonTitle>
-      </IonHeader>
-      <IonContent className="bodybgsx">
-        <section className="bodybgs  min-h-[100vh]">
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white overflow-scroll h-[90%] w-[90%] my-4 rounded-xl border-[#E65B8F] border-2 "
-          >
-            <IonItem className="border-b-[0.5px] flex flex-row p-3">
-              <IonLabel position="stacked">Título</IonLabel>
-              <IonInput
-                style={{
-                  "--padding-start": "10px", // Ajusta el padding desde el inicio
-                  "--padding-end": "10px", // Ajusta el padding desde el final
-                  "--padding-top": "10px", // Ajusta el padding desde arriba
-                  "--padding-bottom": "10px", // Ajusta el padding desde abajo
-                  overflow: "hidden", // Oculta el contenido que se desborda
-                }}
-                className="w-full border-[#E65B8F] border-2 rounded-md my-1.5 custom-input"
-                name="title"
-                value={activity.title}
-                onIonChange={(e: any) => handleChange(e)}
-                placeholder="Ingrese el título"
-              />
-            </IonItem>
-            <IonItem className="border-b-[0.5px] flex flex-row p-3">
-              <IonLabel position="stacked">Categoría</IonLabel>
-              <IonSelect
-                style={{
-                  "--padding-start": "10px", // Ajusta el padding desde el inicio
-                  "--padding-end": "10px", // Ajusta el padding desde el final
-                  "--padding-top": "10px", // Ajusta el padding desde arriba
-                  "--padding-bottom": "10px", // Ajusta el padding desde abajo
-                  overflow: "hidden", // Oculta el contenido que se desborda
-                }}
-                className="w-full border-[#E65B8F] border-2 rounded-md mt-1.5"
-                name="category"
-                value={activity.category}
-                onIonChange={(e: any) => handleChange(e)}
-                placeholder="Seleccione una categoría"
+      {pass ?
+        <>
+          <IonHeader className="w-full h-7">
+            <IonTitle class="custom-activitiesbar ion-text-center text-white">
+              Agregar actividad
+            </IonTitle>
+          </IonHeader>
+          <IonContent className="bodybgsx">
+            <section className="bodybgs  min-h-[100vh]">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-white overflow-scroll h-[90%] w-[90%] my-4 rounded-xl border-[#E65B8F] border-2 "
               >
-                <IonSelectOption value="motoras">Motoras</IonSelectOption>
-                <IonSelectOption value="pelota">Con Pelota</IonSelectOption>
-                {/* Agrega más opciones según sea necesario */}
-              </IonSelect>
-            </IonItem>
-            <IonItem className="border-b-[0.5px] flex flex-row p-3">
-              <IonLabel position="stacked">Subcategoría</IonLabel>
-              <IonSelect
-                style={{
-                  "--padding-start": "10px", // Ajusta el padding desde el inicio
-                  "--padding-end": "10px", // Ajusta el padding desde el final
-                  "--padding-top": "10px", // Ajusta el padding desde arriba
-                  "--padding-bottom": "10px", // Ajusta el padding desde abajo
-                  overflow: "hidden", // Oculta el contenido que se desborda
-                }}
-                className="w-full border-[#E65B8F] border-2 rounded-md mt-1.5"
-                name="subcategory"
-                value={activity.subcategory}
-                onIonChange={(e: any) => handleChange(e)}
-                placeholder="Seleccione una subcategoría"
-              >
-                <IonSelectOption value="desplazamiento">
-                  Desplazamiento
-                </IonSelectOption>
-                <IonSelectOption value="salto">Salto</IonSelectOption>
-                <IonSelectOption value="pateo">Pateo</IonSelectOption>
-                <IonSelectOption value="lanzar">Lanzar</IonSelectOption>
-                <IonSelectOption value="recibir">Recibir</IonSelectOption>
-                <IonSelectOption value="rebotar">Rebotar</IonSelectOption>
-                <IonSelectOption value="golpear">Golpear</IonSelectOption>
-                <IonSelectOption value="tiro">Tiro</IonSelectOption>
-                <IonSelectOption value="agarrar">Agarrar</IonSelectOption>
-              </IonSelect>
-            </IonItem>
-            <IonItem className="border-b-[0.5px] flex flex-row p-3">
-              <IonLabel position="stacked">Palabras clave</IonLabel>
-              <IonTextarea
-              style={{
-                '--padding-start': '10px', // Ajusta el padding desde el inicio
-                '--padding-end': '10px',   // Ajusta el padding desde el final
-                '--padding-top': '10px',   // Ajusta el padding desde arriba
-                '--padding-bottom': '10px', // Ajusta el padding desde abajo
-                'overflow': 'hidden',     // Oculta el contenido que se desborda
-              }}
-                className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
-                name="keywords"
-                value={activity.keywords}
-                onIonChange={(e: any) => handleChange(e)}
-                placeholder="Ingrese las palabras clave"
-              />
-            </IonItem>
-            <IonItem className="border-b-[0.5px] flex flex-row p-3">
-              <IonLabel position="stacked">Propósito</IonLabel>
-              <IonTextarea
-              style={{
-                '--padding-start': '10px', // Ajusta el padding desde el inicio
-                '--padding-end': '10px',   // Ajusta el padding desde el final
-                '--padding-top': '10px',   // Ajusta el padding desde arriba
-                '--padding-bottom': '10px', // Ajusta el padding desde abajo
-                'overflow': 'hidden',     // Oculta el contenido que se desborda
-              }}
-                className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
-                name="purpose"
-                value={activity.purpose}
-                onIonChange={(e: any) => handleChange(e)}
-                placeholder="Ingrese el propósito"
-              />
-            </IonItem>
-            <IonItem className="border-b-[0.5px] flex flex-row p-3">
-              <IonLabel position="stacked">Descripción</IonLabel>
-              <IonTextarea
-              style={{
-                '--padding-start': '10px', // Ajusta el padding desde el inicio
-                '--padding-end': '10px',   // Ajusta el padding desde el final
-                '--padding-top': '10px',   // Ajusta el padding desde arriba
-                '--padding-bottom': '10px', // Ajusta el padding desde abajo
-                'overflow': 'hidden',     // Oculta el contenido que se desborda
-              }}
-                className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
-                name="description"
-                value={activity.description}
-                onIonChange={(e: any) => handleChange(e)}
-                placeholder="Ingrese la descripción"
-              />
-            </IonItem>
-            <IonList className="border-b-[0.5px] flex flex-col p-3">
-              <IonListHeader>
-                <IonLabel>Materiales</IonLabel>
-              </IonListHeader>
-              {activity.materials.map((material, index) => (
-                <IonItem key={index}>
-                  <IonInput
-                    placeholder={`Material ${index + 1}`}
-                    value={material}
-                    onIonChange={(e: CustomEvent) =>
-                      handleMaterialChange(
-                        index,
-                        (e.target as HTMLInputElement).value
-                      )
-                    }
-                  />
-                  <IonButton
-                    style={{ "--background": "#E65B8F", "--color": "#fff" }}
-                    onClick={() => removeMaterial(index)}
-                  >
-                    Eliminar
-                  </IonButton>
-                </IonItem>
-              ))}
-              <IonButton
-                style={{ "--background": "#E65B8F", "--color": "#fff" }}
-                onClick={addMaterial}
-              >
-                Agregar Material
-              </IonButton>
-            </IonList>
-            <IonItem className="border-b-[0.5px] flex flex-row p-3">
-              <IonLabel position="stacked">Variables</IonLabel>
-              <IonTextarea
-              style={{
-                '--padding-start': '10px', // Ajusta el padding desde el inicio
-                '--padding-end': '10px',   // Ajusta el padding desde el final
-                '--padding-top': '10px',   // Ajusta el padding desde arriba
-                '--padding-bottom': '10px', // Ajusta el padding desde abajo
-                'overflow': 'hidden',     // Oculta el contenido que se desborda
-              }}
-                className="w-full h-[15vh] border-[#E65B8F] border-2 rounded-md my-1.5"
-                name="variables"
-                value={activity.variables}
-                onIonChange={(e: any) => handleChange(e)}
-                placeholder="Ingrese las variables"
-              />
-            </IonItem>
-            <IonItem className="border-b-[0.5px] flex flex-row p-3">
-              <IonLabel position="stacked">Imagen</IonLabel>
-              <input
-                className="w-full rounded-md my-1.5 flex flex-col"
-                type="file"
-                onChange={handleImageChange}
-              />
-            </IonItem>
-            <IonList className="border-b-[0.5px] flex flex-col p-3">
-              <IonListHeader>
-                <IonLabel>Psicomotor</IonLabel>
-              </IonListHeader>
-              {activity.psycomotor.map((item, index) => (
-                <IonItem key={index}>
+                <IonItem className="border-b-[0.5px] flex flex-row p-3">
                   <IonLabel position="stacked">Título</IonLabel>
                   <IonInput
-                  style={{
-                    '--padding-start': '10px', // Ajusta el padding desde el inicio
-                    '--padding-end': '10px',   // Ajusta el padding desde el final
-                    '--padding-top': '10px',   // Ajusta el padding desde arriba
-                    '--padding-bottom': '10px', // Ajusta el padding desde abajo
-                    'overflow': 'hidden',     // Oculta el contenido que se desborda
-                  }}
-                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
-                    placeholder="Título"
-                    value={item.title}
-                    onIonChange={(e: CustomEvent) =>
-                      handleArrayChange(
-                        index,
-                        "title",
-                        (e.target as HTMLInputElement).value,
-                        "psycomotor"
-                      )
-                    }
+                    style={{
+                      "--padding-start": "10px", // Ajusta el padding desde el inicio
+                      "--padding-end": "10px", // Ajusta el padding desde el final
+                      "--padding-top": "10px", // Ajusta el padding desde arriba
+                      "--padding-bottom": "10px", // Ajusta el padding desde abajo
+                      overflow: "hidden", // Oculta el contenido que se desborda
+                    }}
+                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5 custom-input"
+                    name="title"
+                    value={activity.title}
+                    onIonChange={(e: any) => handleChange(e)}
+                    placeholder="Ingrese el título"
                   />
+                </IonItem>
+                <IonItem className="border-b-[0.5px] flex flex-row p-3">
+                  <IonLabel position="stacked">Categoría</IonLabel>
+                  <IonSelect
+                    style={{
+                      "--padding-start": "10px", // Ajusta el padding desde el inicio
+                      "--padding-end": "10px", // Ajusta el padding desde el final
+                      "--padding-top": "10px", // Ajusta el padding desde arriba
+                      "--padding-bottom": "10px", // Ajusta el padding desde abajo
+                      overflow: "hidden", // Oculta el contenido que se desborda
+                    }}
+                    className="w-full border-[#E65B8F] border-2 rounded-md mt-1.5"
+                    name="category"
+                    value={activity.category}
+                    onIonChange={(e: any) => handleChange(e)}
+                    placeholder="Seleccione una categoría"
+                  >
+                    <IonSelectOption value="motoras">Motoras</IonSelectOption>
+                    <IonSelectOption value="pelota">Con Pelota</IonSelectOption>
+                    {/* Agrega más opciones según sea necesario */}
+                  </IonSelect>
+                </IonItem>
+                <IonItem className="border-b-[0.5px] flex flex-row p-3">
+                  <IonLabel position="stacked">Subcategoría</IonLabel>
+                  <IonSelect
+                    style={{
+                      "--padding-start": "10px", // Ajusta el padding desde el inicio
+                      "--padding-end": "10px", // Ajusta el padding desde el final
+                      "--padding-top": "10px", // Ajusta el padding desde arriba
+                      "--padding-bottom": "10px", // Ajusta el padding desde abajo
+                      overflow: "hidden", // Oculta el contenido que se desborda
+                    }}
+                    className="w-full border-[#E65B8F] border-2 rounded-md mt-1.5"
+                    name="subcategory"
+                    value={activity.subcategory}
+                    onIonChange={(e: any) => handleChange(e)}
+                    placeholder="Seleccione una subcategoría"
+                  >
+                    <IonSelectOption value="desplazamiento">
+                      Desplazamiento
+                    </IonSelectOption>
+                    <IonSelectOption value="salto">Salto</IonSelectOption>
+                    <IonSelectOption value="pateo">Pateo</IonSelectOption>
+                    <IonSelectOption value="lanzar">Lanzar</IonSelectOption>
+                    <IonSelectOption value="recibir">Recibir</IonSelectOption>
+                    <IonSelectOption value="rebotar">Rebotar</IonSelectOption>
+                    <IonSelectOption value="golpear">Golpear</IonSelectOption>
+                    <IonSelectOption value="tiro">Tiro</IonSelectOption>
+                    <IonSelectOption value="agarrar">Agarrar</IonSelectOption>
+                  </IonSelect>
+                </IonItem>
+                <IonItem className="border-b-[0.5px] flex flex-row p-3">
+                  <IonLabel position="stacked">Palabras clave</IonLabel>
+                  <IonTextarea
+                    style={{
+                      '--padding-start': '10px', // Ajusta el padding desde el inicio
+                      '--padding-end': '10px',   // Ajusta el padding desde el final
+                      '--padding-top': '10px',   // Ajusta el padding desde arriba
+                      '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                      'overflow': 'hidden',     // Oculta el contenido que se desborda
+                    }}
+                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
+                    name="keywords"
+                    value={activity.keywords}
+                    onIonChange={(e: any) => handleChange(e)}
+                    placeholder="Ingrese las palabras clave"
+                  />
+                </IonItem>
+                <IonItem className="border-b-[0.5px] flex flex-row p-3">
+                  <IonLabel position="stacked">Propósito</IonLabel>
+                  <IonTextarea
+                    style={{
+                      '--padding-start': '10px', // Ajusta el padding desde el inicio
+                      '--padding-end': '10px',   // Ajusta el padding desde el final
+                      '--padding-top': '10px',   // Ajusta el padding desde arriba
+                      '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                      'overflow': 'hidden',     // Oculta el contenido que se desborda
+                    }}
+                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
+                    name="purpose"
+                    value={activity.purpose}
+                    onIonChange={(e: any) => handleChange(e)}
+                    placeholder="Ingrese el propósito"
+                  />
+                </IonItem>
+                <IonItem className="border-b-[0.5px] flex flex-row p-3">
                   <IonLabel position="stacked">Descripción</IonLabel>
                   <IonTextarea
-                  style={{
-                    '--padding-start': '10px', // Ajusta el padding desde el inicio
-                    '--padding-end': '10px',   // Ajusta el padding desde el final
-                    '--padding-top': '10px',   // Ajusta el padding desde arriba
-                    '--padding-bottom': '10px', // Ajusta el padding desde abajo
-                    'overflow': 'hidden',     // Oculta el contenido que se desborda
-                  }}
+                    style={{
+                      '--padding-start': '10px', // Ajusta el padding desde el inicio
+                      '--padding-end': '10px',   // Ajusta el padding desde el final
+                      '--padding-top': '10px',   // Ajusta el padding desde arriba
+                      '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                      'overflow': 'hidden',     // Oculta el contenido que se desborda
+                    }}
                     className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
-                    placeholder="Descripción"
-                    value={item.description}
-                    onIonChange={(e: CustomEvent) =>
-                      handleArrayChange(
-                        index,
-                        "description",
-                        (e.target as HTMLTextAreaElement).value,
-                        "psycomotor"
-                      )
-                    }
+                    name="description"
+                    value={activity.description}
+                    onIonChange={(e: any) => handleChange(e)}
+                    placeholder="Ingrese la descripción"
                   />
+                </IonItem>
+                <IonList className="border-b-[0.5px] flex flex-col p-3">
+                  <IonListHeader>
+                    <IonLabel>Materiales</IonLabel>
+                  </IonListHeader>
+                  {activity.materials.map((material, index) => (
+                    <IonItem key={index}>
+                      <IonInput
+                        placeholder={`Material ${index + 1}`}
+                        value={material}
+                        onIonChange={(e: CustomEvent) =>
+                          handleMaterialChange(
+                            index,
+                            (e.target as HTMLInputElement).value
+                          )
+                        }
+                      />
+                      <IonButton
+                        style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                        onClick={() => removeMaterial(index)}
+                      >
+                        Eliminar
+                      </IonButton>
+                    </IonItem>
+                  ))}
                   <IonButton
                     style={{ "--background": "#E65B8F", "--color": "#fff" }}
-                    onClick={() => removePsycomotor(index)}
+                    onClick={addMaterial}
                   >
-                    Eliminar
+                    Agregar Material
                   </IonButton>
-                </IonItem>
-              ))}
-              <IonButton
-                style={{ "--background": "#E65B8F", "--color": "#fff" }}
-                onClick={addPsycomotor}
-              >
-                Agregar Psicomotor
-              </IonButton>
-            </IonList>
-            <IonList className="border-b-[0.5px] flex flex-col p-3">
-              <IonListHeader>
-                <IonLabel>Información adicional</IonLabel>
-              </IonListHeader>
-              {activity.extraInfo.map((item, index) => (
-                <IonItem key={index}>
-                  <IonLabel position="stacked">Título</IonLabel>
-                  <IonInput
-                  style={{
-                    '--padding-start': '10px', // Ajusta el padding desde el inicio
-                    '--padding-end': '10px',   // Ajusta el padding desde el final
-                    '--padding-top': '10px',   // Ajusta el padding desde arriba
-                    '--padding-bottom': '10px', // Ajusta el padding desde abajo
-                    'overflow': 'hidden',     // Oculta el contenido que se desborda
-                  }}
-                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
-                    placeholder="Título"
-                    value={item.title}
-                    onIonChange={(e: CustomEvent) =>
-                      handleArrayChange(
-                        index,
-                        "title",
-                        (e.target as HTMLInputElement).value,
-                        "extraInfo"
-                      )
-                    }
-                  />
-                  <IonLabel position="stacked">Descripción</IonLabel>
+                </IonList>
+                <IonItem className="border-b-[0.5px] flex flex-row p-3">
+                  <IonLabel position="stacked">Variables</IonLabel>
                   <IonTextarea
-                  style={{
-                    '--padding-start': '10px', // Ajusta el padding desde el inicio
-                    '--padding-end': '10px',   // Ajusta el padding desde el final
-                    '--padding-top': '10px',   // Ajusta el padding desde arriba
-                    '--padding-bottom': '10px', // Ajusta el padding desde abajo
-                    'overflow': 'hidden',     // Oculta el contenido que se desborda
-                  }}
-                    className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
-                    placeholder="Descripción"
-                    value={item.description}
-                    onIonChange={(e: CustomEvent) =>
-                      handleArrayChange(
-                        index,
-                        "description",
-                        (e.target as HTMLTextAreaElement).value,
-                        "extraInfo"
-                      )
-                    }
+                    style={{
+                      '--padding-start': '10px', // Ajusta el padding desde el inicio
+                      '--padding-end': '10px',   // Ajusta el padding desde el final
+                      '--padding-top': '10px',   // Ajusta el padding desde arriba
+                      '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                      'overflow': 'hidden',     // Oculta el contenido que se desborda
+                    }}
+                    className="w-full h-[15vh] border-[#E65B8F] border-2 rounded-md my-1.5"
+                    name="variables"
+                    value={activity.variables}
+                    onIonChange={(e: any) => handleChange(e)}
+                    placeholder="Ingrese las variables"
                   />
+                </IonItem>
+                <IonItem className="border-b-[0.5px] flex flex-row p-3">
+                  <IonLabel position="stacked">Imagen</IonLabel>
+                  <input
+                    className="w-full rounded-md my-1.5 flex flex-col"
+                    type="file"
+                    onChange={handleImageChange}
+                  />
+                </IonItem>
+                <IonList className="border-b-[0.5px] flex flex-col p-3">
+                  <IonListHeader>
+                    <IonLabel>Psicomotor</IonLabel>
+                  </IonListHeader>
+                  {activity.psycomotor.map((item, index) => (
+                    <IonItem key={index}>
+                      <IonLabel position="stacked">Título</IonLabel>
+                      <IonInput
+                        style={{
+                          '--padding-start': '10px', // Ajusta el padding desde el inicio
+                          '--padding-end': '10px',   // Ajusta el padding desde el final
+                          '--padding-top': '10px',   // Ajusta el padding desde arriba
+                          '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                          'overflow': 'hidden',     // Oculta el contenido que se desborda
+                        }}
+                        className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
+                        placeholder="Título"
+                        value={item.title}
+                        onIonChange={(e: CustomEvent) =>
+                          handleArrayChange(
+                            index,
+                            "title",
+                            (e.target as HTMLInputElement).value,
+                            "psycomotor"
+                          )
+                        }
+                      />
+                      <IonLabel position="stacked">Descripción</IonLabel>
+                      <IonTextarea
+                        style={{
+                          '--padding-start': '10px', // Ajusta el padding desde el inicio
+                          '--padding-end': '10px',   // Ajusta el padding desde el final
+                          '--padding-top': '10px',   // Ajusta el padding desde arriba
+                          '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                          'overflow': 'hidden',     // Oculta el contenido que se desborda
+                        }}
+                        className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
+                        placeholder="Descripción"
+                        value={item.description}
+                        onIonChange={(e: CustomEvent) =>
+                          handleArrayChange(
+                            index,
+                            "description",
+                            (e.target as HTMLTextAreaElement).value,
+                            "psycomotor"
+                          )
+                        }
+                      />
+                      <IonButton
+                        style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                        onClick={() => removePsycomotor(index)}
+                      >
+                        Eliminar
+                      </IonButton>
+                    </IonItem>
+                  ))}
                   <IonButton
                     style={{ "--background": "#E65B8F", "--color": "#fff" }}
-                    onClick={() => removeExtraInfo(index)}
+                    onClick={addPsycomotor}
                   >
-                    Eliminar
+                    Agregar Psicomotor
                   </IonButton>
-                </IonItem>
-              ))}
-              <IonButton
-                style={{ "--background": "#E65B8F", "--color": "#fff" }}
-                onClick={addExtraInfo}
-              >
-                Agregar Información Adicional
-              </IonButton>
-            </IonList>
-            <div className="border-b-[0.5px] flex flex-col p-3">
-              <IonButton
-                className="w-full"
-                style={{ "--background": "#E65B8F", "--color": "#fff" }}
-                type="submit"
-              >
-                Enviar
-              </IonButton>
+                </IonList>
+                <IonList className="border-b-[0.5px] flex flex-col p-3">
+                  <IonListHeader>
+                    <IonLabel>Información adicional</IonLabel>
+                  </IonListHeader>
+                  {activity.extraInfo.map((item, index) => (
+                    <IonItem key={index}>
+                      <IonLabel position="stacked">Título</IonLabel>
+                      <IonInput
+                        style={{
+                          '--padding-start': '10px', // Ajusta el padding desde el inicio
+                          '--padding-end': '10px',   // Ajusta el padding desde el final
+                          '--padding-top': '10px',   // Ajusta el padding desde arriba
+                          '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                          'overflow': 'hidden',     // Oculta el contenido que se desborda
+                        }}
+                        className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
+                        placeholder="Título"
+                        value={item.title}
+                        onIonChange={(e: CustomEvent) =>
+                          handleArrayChange(
+                            index,
+                            "title",
+                            (e.target as HTMLInputElement).value,
+                            "extraInfo"
+                          )
+                        }
+                      />
+                      <IonLabel position="stacked">Descripción</IonLabel>
+                      <IonTextarea
+                        style={{
+                          '--padding-start': '10px', // Ajusta el padding desde el inicio
+                          '--padding-end': '10px',   // Ajusta el padding desde el final
+                          '--padding-top': '10px',   // Ajusta el padding desde arriba
+                          '--padding-bottom': '10px', // Ajusta el padding desde abajo
+                          'overflow': 'hidden',     // Oculta el contenido que se desborda
+                        }}
+                        className="w-full border-[#E65B8F] border-2 rounded-md my-1.5"
+                        placeholder="Descripción"
+                        value={item.description}
+                        onIonChange={(e: CustomEvent) =>
+                          handleArrayChange(
+                            index,
+                            "description",
+                            (e.target as HTMLTextAreaElement).value,
+                            "extraInfo"
+                          )
+                        }
+                      />
+                      <IonButton
+                        style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                        onClick={() => removeExtraInfo(index)}
+                      >
+                        Eliminar
+                      </IonButton>
+                    </IonItem>
+                  ))}
+                  <IonButton
+                    style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                    onClick={addExtraInfo}
+                  >
+                    Agregar Información Adicional
+                  </IonButton>
+                </IonList>
+                <div className="border-b-[0.5px] flex flex-col p-3">
+                  <IonButton
+                    className="w-full"
+                    style={{ "--background": "#E65B8F", "--color": "#fff" }}
+                    type="submit"
+                  >
+                    Enviar
+                  </IonButton>
+                </div>
+              </form>
+            </section>
+          </IonContent>
+        </> :
+        <>
+          <IonContent>
+            <div className="select_roll_container">
+              <div className="w-full flex flex-col content-center items-center justify-center">
+                <h1 className="poppins text-white font-extrabold text-3xl mb-5">Acceso para agregar actividades</h1>
+                <img src={niña} className="w-[60%] self-center" />
+              </div>
+              <div className="relative bg-white w-[100%] h-[200px] p-6 rounded-3xl edit_shadow flex justify-center content-center items-center">
+                <div className="w-[95%]">
+                  <IonItem className="border-b-[0.5px] flex flex-row p-3">
+                    <IonInput
+                      style={{
+                        "--padding-start": "10px", // Ajusta el padding desde el inicio
+                        "--padding-end": "10px", // Ajusta el padding desde el final
+                        "--padding-top": "10px", // Ajusta el padding desde arriba
+                        "--padding-bottom": "10px", // Ajusta el padding desde abajo
+                        overflow: "hidden", // Oculta el contenido que se desborda
+                      }}
+                      className="w-full border-[#E65B8F] border-2 rounded-md my-1.5 custom-input"
+                      name="codigo"
+                      value={codeA}
+                      onIonChange={(e: any) => setCodeA(e.target.value)}
+                      placeholder="Ingrese el código"
+                    />
+                  </IonItem>
+                </div>
+                <div className="rounded-full absolute -bottom-8 overflow-hidden p-0.5 bg-white edit_shadow2">
+                  <IonButton
+                    onClick={handleContinue}
+                    disabled={!codeA}
+                    shape="round"
+                    size="large"
+                  >
+                    <IonIcon
+                      slot="icon-only"
+                      icon={arrowForward}
+                      aria-hidden="true"
+                      color="ligth"
+                    ></IonIcon>
+                  </IonButton>
+                </div>
+              </div>
             </div>
-          </form>
-        </section>
-      </IonContent>
+          </IonContent>
+        </>}
     </IonPage>
   );
 };

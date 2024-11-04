@@ -24,7 +24,6 @@ import {
   arrowForward,
 } from "ionicons/icons";
 import { SplashScreen } from "@capacitor/splash-screen";
-import { StatusBar, Style } from "@capacitor/status-bar";
 import { IonReactRouter } from "@ionic/react-router";
 import { Redirect, Route } from "react-router";
 
