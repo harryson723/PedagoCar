@@ -44,7 +44,10 @@
   text-overflow: ellipsis;
 }
 .why-us .custom-home-button {
-  --background: #d05281;
+  --background: #d05281; /* Fondo inicial */
+  --background-hover: #e06699; /* Fondo al pasar el cursor */
+  --background-focused: #b3476f; /* Fondo al enfocar */
+  --background-activated: #993a5c; /* Fondo al presionar */
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -93,12 +96,18 @@
   white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
   overflow: hidden; /* Oculta el desbordamiento del texto */
   text-overflow: ellipsis; /* Añade puntos suspensivos */
-  --background: #d05281;
+  --background: #d05281; /* Fondo inicial */
+  --background-hover: #e06699; /* Fondo al pasar el cursor */
+  --background-focused: #b3476f; /* Fondo al enfocar */
+  --background-activated: #993a5c; /* Fondo al presionar */
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-style: normal;
   color: white;
-  /* main.css */
+  background-color: var(--background);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out; /* Transición suave */
 }
 .buttontruncate p {
   font-size: 15px;

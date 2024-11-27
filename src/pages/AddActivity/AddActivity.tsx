@@ -209,7 +209,8 @@ const ActivityForm: React.FC = () => {
                     placeholder="Seleccione una categoría"
                   >
                     <IonSelectOption value="motoras">Motoras</IonSelectOption>
-                    <IonSelectOption value="pelota">Con Pelota</IonSelectOption>
+                    <IonSelectOption value="pelota">Con Pelota</IonSelectOption>                    
+                    <IonSelectOption value="pactiva">Pausa Activa</IonSelectOption>
                     {/* Agrega más opciones según sea necesario */}
                   </IonSelect>
                 </IonItem>
@@ -237,9 +238,8 @@ const ActivityForm: React.FC = () => {
                     <IonSelectOption value="lanzar">Lanzar</IonSelectOption>
                     <IonSelectOption value="recibir">Recibir</IonSelectOption>
                     <IonSelectOption value="rebotar">Rebotar</IonSelectOption>
-                    <IonSelectOption value="golpear">Golpear</IonSelectOption>
-                    <IonSelectOption value="tiro">Tiro</IonSelectOption>
-                    <IonSelectOption value="agarrar">Agarrar</IonSelectOption>
+                    <IonSelectOption value="golpear">Golpear</IonSelectOption>                                    
+                    <IonSelectOption value="sinsub">Sin Subcategoria</IonSelectOption>
                   </IonSelect>
                 </IonItem>
                 <IonItem className="border-b-[0.5px] flex flex-row p-3">

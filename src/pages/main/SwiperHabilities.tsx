@@ -33,7 +33,7 @@ const SwiperHabilities: React.FC = () => {
             onClick={() => {
               history.push("/allfilter/desplazamiento");
             }}
-            className="buttontruncate rounded-lg"
+            className="buttontruncate rounded-lg "
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -47,36 +47,18 @@ const SwiperHabilities: React.FC = () => {
         </SwiperSlide>
         <SwiperSlide>
           <MainButton
-            text={truncateText("LANZAR", 7)}
+            text={truncateText("DESPLAZAMIENTO", 7)}
             onClick={() => {
-              history.push("/allfilter/lanzar");
+              history.push("/allfilter/desplazamiento");
             }}
             className="buttontruncate rounded-lg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <MainButton
-            text={truncateText("RECIBIR", 7)}
+            text={truncateText("SALTO", 7)}
             onClick={() => {
-              history.push("/allfilter/recibir");
-            }}
-            className="buttontruncate rounded-lg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MainButton
-            text={truncateText("REBOTAR", 7)}
-            onClick={() => {
-              history.push("/allfilter/rebotar");
-            }}
-            className="buttontruncate rounded-lg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MainButton
-            text={truncateText("GOLPEAR", 7)}
-            onClick={() => {
-              history.push("/allfilter/golpear");
+              history.push("/allfilter/salto");
             }}
             className="buttontruncate rounded-lg"
           />

@@ -27,25 +27,48 @@ const SwiperBall: React.FC = () => {
     >
       <SwiperSlide>
         <MainButton
-          text={truncateText("LANZAR", 7)}
-          onClick={() => { history.push('/allfilter/lanzar'); }}
-          className="buttontruncate rounded-lg"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <MainButton
           text={truncateText("PATEO", 7)}
           onClick={() => { history.push('/allfilter/pateo'); }}
           className="buttontruncate rounded-lg"
         />
       </SwiperSlide>
+      
       <SwiperSlide>
-        <MainButton
-          text={truncateText("RECIBIR", 7)}
-          onClick={() => { history.push('/allfilter/recibir'); }}
-          className="buttontruncate rounded-lg"
-        />
-      </SwiperSlide>
+          <MainButton
+            text={truncateText("LANZAR", 7)}
+            onClick={() => {
+              history.push("/allfilter/lanzar");
+            }}
+            className="buttontruncate rounded-lg"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <MainButton
+            text={truncateText("RECIBIR", 7)}
+            onClick={() => {
+              history.push("/allfilter/recibir");
+            }}
+            className="buttontruncate rounded-lg"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <MainButton
+            text={truncateText("REBOTAR", 7)}
+            onClick={() => {
+              history.push("/allfilter/rebotar");
+            }}
+            className="buttontruncate rounded-lg"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <MainButton
+            text={truncateText("GOLPEAR", 7)}
+            onClick={() => {
+              history.push("/allfilter/golpear");
+            }}
+            className="buttontruncate rounded-lg "
+          />
+        </SwiperSlide>
       {/* Agrega más SwiperSlides si es necesario */}
     </Swiper>
   );
