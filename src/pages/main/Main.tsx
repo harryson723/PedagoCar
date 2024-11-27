@@ -1,35 +1,30 @@
+import React, { useContext, useState } from "react";
 import {
   IonButton,
   IonContent,
   IonHeader,
   IonIcon,
   IonPage,
-  IonText,
   IonTitle,
   IonToolbar,
+  useIonViewWillEnter,
 } from "@ionic/react";
-import "./main.css"; // Asegúrate de importar el archivo SCSS
-import { generateSuggestions } from "../../utils/loadActivity";
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../components/context/UserContext";
-import MainButton from "../../components/MainButton";
 import { arrowForward } from "ionicons/icons";
 import { useHistory } from "react-router";
-// import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import SwiperHabilities from "./SwiperHabilities";
 import SwiperBall from "./SwiperBall";
+import { UserContext } from "../../components/context/UserContext";
+import MainButton from "../../components/MainButton";
+import "./main.css";
 
 const Main: React.FC = () => {
-  const [suggestions, setSuggestions] = useState<any[]>([]);
-  const { update } = useContext(UserContext);
+  const [key, setKey] = useState(0); // Key para forzar el renderizado
   const history = useHistory();
 
-  useEffect(() => {
-    setSuggestions(generateSuggestions());
-  }, [update]);
+  // Detectar cuando el usuario regresa a la página
+  useIonViewWillEnter(() => {
+    setKey((prevKey) => prevKey + 1); // Incrementa la key para forzar recreación
+  });
 
   return (
     <IonPage>
@@ -39,7 +34,7 @@ const Main: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="bgcolor min-h-full">
-        <section className=" why-us w-[100%]">
+        <section className="why-us w-[100%]">
           <h1 className="text-white">
             ¿Por qué esta <span className="text-[#f95c1c]">app?</span>
           </h1>
@@ -54,20 +49,22 @@ const Main: React.FC = () => {
           <MainButton
             className="custom-home-button"
             text="VER MÁS"
-            onClick={() => {history.push(`/suggestions`)}}
+            onClick={() => {
+              history.push(`/suggestions`);
+            }}
           />
         </section>
-        <section className="">
+        <section>
           <div className="slidersections mt-5">
             <h2>Habilidades Locomotoras</h2>
-            <div className="sw-mod" >
-              <SwiperHabilities />
+            <div className="sw-mod">
+              <SwiperHabilities key={`habilities-${key}`} /> {/* Key dinámica */}
             </div>
           </div>
           <div className="slidersections mt-5">
             <h2>Habilidades con pelota</h2>
             <div className="sw-mod">
-              <SwiperBall />
+              <SwiperBall key={`ball-${key}`} /> {/* Key dinámica */}
             </div>
           </div>
         </section>
@@ -77,7 +74,9 @@ const Main: React.FC = () => {
             <IonButton
               fill="clear"
               className="text-[#F95715] font-bold text-left text-[10px]"
-              onClick={() => {history.push(`/all`)}}
+              onClick={() => {
+                history.push(`/all`);
+              }}
             >
               ver todas
               <IonIcon slot="end" icon={arrowForward}></IonIcon>
