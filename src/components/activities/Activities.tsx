@@ -25,7 +25,6 @@ import ActivitiesContent from "./ActivitiesContent";
 import { ClipLoader } from "react-spinners";
 import { Loader } from "rsuite";
 
-
 interface ActivitiesProps {
   match: any;
 }
@@ -82,9 +81,11 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
   useEffect(() => {
     const get = async () => {
       setShowLoader(true);
-      let activity: any = await fetch(`https://services.qalaub.com/api/ipapp?id=${match.params.id}`);
+      let activity: any = await fetch(
+        `https://services.qalaub.com/api/ipapp?id=${match.params.id}`
+      );
       let newActivity = await activity.json();
-      newActivity.materials = newActivity.materials.split(',');
+      newActivity.materials = newActivity.materials.split(",");
       setActivity(newActivity);
       setShowLoader(false);
     };
@@ -105,10 +106,12 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        {showLoader && < div className="h-[100vh] flex flex-row justify-center content-center " >
-          <ClipLoader size={60} />
-        </div >}
-        {!showLoader &&
+        {showLoader && (
+          <div className="h-[100vh] flex flex-row justify-center content-center ">
+            <ClipLoader size={60} />
+          </div>
+        )}
+        {!showLoader && (
           <>
             <IonHeader>
               <IonToolbar>
@@ -119,12 +122,18 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
                   >
                     <IonLabel>Actividad</IonLabel>
                   </IonSegmentButton>
+                  <IonSegmentButton
+                    className="custom-segment-button"
+                    value="purpose"
+                  >
+                    <IonLabel>Aportes</IonLabel>
+                  </IonSegmentButton>
                 </IonSegment>
               </IonToolbar>
             </IonHeader>
             <div className="bodybgs min-h-full">
               {showPurpose == "activity" ? (
-                <section >
+                <section>
                   <h1 className="text-center mt-5 font-bold bg-white rounded-lg py-2.5 w-[90%] mx-auto">
                     {activity.title}
                   </h1>
@@ -139,7 +148,9 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
                   <div>
                     <IonCard>
                       <IonCardHeader>
-                        <IonCardTitle className="font-bold">Materiales requeridos</IonCardTitle>
+                        <IonCardTitle className="font-bold">
+                          Materiales requeridos
+                        </IonCardTitle>
                       </IonCardHeader>
                       <IonCardContent>
                         {activity.materials?.map((el: string) => (
@@ -157,11 +168,15 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
                 </section>
               ) : (
                 <section className="min-h-full justific">
-                  <h2 className="text-center mt-5 font-bold bg-white rounded-lg py-2.5 w-[90%] mx-auto">Aportes Psicomotores</h2>
+                  <h2 className="text-center mt-5 font-bold bg-white rounded-lg py-2.5 w-[90%] mx-auto">
+                    Aportes Psicomotores
+                  </h2>
                   {activity.psycomotor?.map((el: any) => (
                     <IonCard key={el.title}>
                       <IonCardHeader>
-                        <IonCardTitle className="font-bold">{el.title}</IonCardTitle>
+                        <IonCardTitle className="font-bold">
+                          {el.title}
+                        </IonCardTitle>
                       </IonCardHeader>
                       <IonCardContent>{el.description}</IonCardContent>
                     </IonCard>
@@ -169,8 +184,8 @@ const Activities: React.FC<ActivitiesProps> = ({ match }) => {
                 </section>
               )}
             </div>
-          </>}
-
+          </>
+        )}
       </IonContent>
     </IonPage>
   );
