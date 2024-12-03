@@ -27,13 +27,13 @@ const Main: React.FC = () => {
   });
 
   return (
-    <IonPage>
+    <IonPage className="min-h-[100vh]">
       <IonHeader>
         <IonToolbar className="custom-toolbar">
           <IonTitle className="lilita-one-regular">PIAPP</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="bgcolor min-h-full">
+      <IonContent className="bgcolor">
         <section className="why-us w-[100%]">
           <h1 className="text-white">
             ¿Por qué esta <span className="text-[#f95c1c]">app?</span>
@@ -54,33 +54,37 @@ const Main: React.FC = () => {
             }}
           />
         </section>
-        <section>
-          <div className="slidersections mt-5">
-            <h2>Habilidades Locomotoras</h2>
-            <div className="sw-mod">
-              <SwiperHabilities key={`habilities-${key}`} /> {/* Key dinámica */}
+
+        <section className="min-h-[70vh]">
+          <div>
+            <div className="slidersections mt-5">
+              <h2>Habilidades Locomotoras</h2>
+              <div className="sw-mod">
+                <SwiperHabilities key={`habilities-${key}`} />{" "}
+                {/* Key dinámica */}
+              </div>
+            </div>
+            <div className="slidersections mt-5">
+              <h2>Habilidades con pelota</h2>
+              <div className="sw-mod">
+                <SwiperBall key={`ball-${key}`} /> {/* Key dinámica */}
+              </div>
             </div>
           </div>
-          <div className="slidersections mt-5">
-            <h2>Habilidades con pelota</h2>
-            <div className="sw-mod">
-              <SwiperBall key={`ball-${key}`} /> {/* Key dinámica */}
+          <div className="popular-activities">
+            <div className="slidersections mt-5 populars">
+              <h2>Actividades populares</h2>
+              <IonButton
+                fill="clear"
+                className="text-[#F95715] font-bold text-left text-[10px]"
+                onClick={() => {
+                  history.push(`/all`);
+                }}
+              >
+                ver todas
+                <IonIcon slot="end" icon={arrowForward}></IonIcon>
+              </IonButton>
             </div>
-          </div>
-        </section>
-        <section className="popular-activities">
-          <div className="slidersections mt-5 populars">
-            <h2>Actividades populares</h2>
-            <IonButton
-              fill="clear"
-              className="text-[#F95715] font-bold text-left text-[10px]"
-              onClick={() => {
-                history.push(`/all`);
-              }}
-            >
-              ver todas
-              <IonIcon slot="end" icon={arrowForward}></IonIcon>
-            </IonButton>
           </div>
         </section>
       </IonContent>
