@@ -1,2 +1,75 @@
+@charset "UTF-8";
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+* {
+  font-family: Arial, sans-serif;
+}
+
+/* Fondo degradado en toda la barra de pestañas */
+.hometab {
+  background: #e85d8b;
+}
+.hometab ion-tab-button {
+  background: transparent;
+  position: relative;
+}
+
+ion-icon {
+  color: rgb(85, 6, 158);
+}
+
+ion-icon:hover {
+  color: rgb(205, 173, 235);
+  /* Color azul claro al pasar el mouse */
+}
+
+ion-icon.tab-selected {
+  color: rgb(28, 1, 53);
+  /* Color azul claro cuando el ícono está activo */
+}
+
+.bodybgs .infosugg {
+  background-color: rgb(85, 6, 158);
+  width: 90%;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px 0px;
+}
+
+.parragraphp1 {
+  color: #FFF;
+  text-align: left;
+  font-size: 20px;
+}
+
+.texth1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 20px;
+  font-size: 25px;
+  color: #FFF;
+  text-align: center;
+}
+
+.activityBg {
+  background-color: rgb(85, 6, 158);
+  color: #fff;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.activityTitle {
+  color: #E1BEE7;
+  font-weight: bold;
+  font-size: x-large;
+  letter-spacing: 5px;
+}
+
+.activityBtn {
+  background-color: #864196;
+}
+
+ion-card img {
+  max-height: 300px;
+  width: 100%;
+}/*# sourceMappingURL=variables.css.map */

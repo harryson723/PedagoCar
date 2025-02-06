@@ -1,0 +1,205 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap");
+.bgcolor {
+  --background: #f5f5f5;
+}
+
+.custom-toolbar {
+  --background: #e85d8b;
+}
+
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: xx-large;
+}
+
+.why-us {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 22%;
+  padding: 15px 15px;
+}
+.why-us h1 {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.why-us p {
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Número de líneas a mostrar antes de truncar */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.why-us .custom-home-button {
+  --background: #d05281; /* Fondo inicial */
+  --background-hover: #e06699; /* Fondo al pasar el cursor */
+  --background-focused: #b3476f; /* Fondo al enfocar */
+  --background-activated: #993a5c; /* Fondo al presionar */
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+  margin-top: 15px;
+}
+.why-us .custom-home-button p {
+  font-size: 12px;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.why-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../../public/img/Home/pexels-shvetsa-3845220.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.why-us::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Ajusta la opacidad para cambiar el nivel de oscurecimiento */
+  z-index: -1;
+}
+
+.why-us > * {
+  position: relative;
+  z-index: 1;
+}
+
+.buttontruncate {
+  overflow: visible;
+  margin: 0 10px;
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+  overflow: hidden; /* Oculta el desbordamiento del texto */
+  text-overflow: ellipsis; /* Añade puntos suspensivos */
+  --background: #d05281; /* Fondo inicial */
+  --background-hover: #e06699; /* Fondo al pasar el cursor */
+  --background-focused: #b3476f; /* Fondo al enfocar */
+  --background-activated: #993a5c; /* Fondo al presionar */
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+  background-color: var(--background);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out; /* Transición suave */
+}
+.buttontruncate p {
+  font-size: 15px;
+  margin: 0;
+  height: 44px;
+  width: 155px;
+  display: flex; /* Hacer que el contenedor sea un flex container */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-align: center; /* Asegurar que el texto esté centrado */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.slidersections {
+  background-color: #ffffff;
+  padding: 20px 0px;
+}
+.slidersections h2 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  margin: 20px;
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.populars {
+  display: flex;
+}
+.populars h2 {
+  margin-top: 20px;
+}
+
+.select_roll_container {
+  --background: none;
+  background: linear-gradient(to bottom, #c624ff 20%, #ff864e 100%), linear-gradient(to bottom, transparent 50%, #ffffff 60%);
+  background-size: 100% 50%, 100% 50%;
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.select_roll_container ion-select {
+  width: 100%;
+  max-width: 400px;
+}
+
+.select_roll_container ion-button {
+  --background: none;
+  background: linear-gradient(to bottom, #c624ff -100%, #ff864e 100%);
+  border-radius: 100%;
+}
+
+.edit_shadow {
+  box-shadow: 0 0px 6px 2px rgba(0, 0, 0, 0.4);
+}
+
+.edit_shadow2 {
+  box-shadow: 0 10px 5px -1px rgba(0, 0, 0, 0.4);
+}
+
+.no-focus-indicator ion-select {
+  --background: none;
+  --box-shadow: none;
+  --outline: none;
+}
+
+/* También se puede aplicar a los elementos internos */
+.no-focus-indicator ion-select .select-text {
+  box-shadow: none;
+}
+
+.no-focus-indicator ion-select .select-icon {
+  display: none;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.sw-mod .swiper-autoheight, .sw-mod .swiper-autoheight .swiper-slide {
+  height: 80px;
+}
+.sw-mod .swiper-scrollbar {
+  z-index: 10;
+}
+.sw-mod .swiper-scrollbar-drag {
+  --swiper-scrollbar-drag-bg-color: rgb(232, 93, 139);
+}/*# sourceMappingURL=main.css.map */

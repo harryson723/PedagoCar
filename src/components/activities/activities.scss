@@ -1,0 +1,76 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+.activityBg {
+    background-color: white; /* Morado oscuro */
+    color: #fff;
+    border-radius: 10px; /* Bordes redondeados para la tarjeta */
+    margin-bottom: 20px;
+  }
+  
+  .activityTitle {
+    color: black; /* Morado claro */
+    font-size: 12px; /* Tamaño de fuente aumentado */
+    text-align: left;
+    letter-spacing: 1.5px;
+  }
+
+  
+  .activityBtn {
+    --background: #c074f3; /* Morado medio */
+    color: #55069e;
+    --background-activated: #8E24AA; /* Morado intermedio más oscuro */
+    --background-focused: #8E24AA;
+    --background-hover: #8E24AA;
+    --color: #fff; /* Blanco para el texto */
+    border-radius: 15px;
+    margin-top: 10px;
+    transition: transform 0.2s, box-shadow 0.2s; /* Transición para hover */
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .activityBtn:hover {
+    transform: translateY(-2px); /* Mover el botón hacia arriba en hover */
+  }
+  
+  .activityBtn:active {
+    transform: translateY(0); /* Restaurar posición en active */
+  }
+  
+ .custom-activitiesbar{
+    background: #e85d8b;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    letter-spacing: 3px;
+ }
+
+ .custom-input {
+  padding: 8px; /* Ajusta el padding interno */
+  overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+ .custom-segment-button {
+  --color: #dc5097; /* Color del texto cuando está inactivo */
+  --background: transparent; /* Fondo transparente cuando está inactivo */
+}
+
+ion-segment-button::part(indicator-background) {
+  background: #dc5097;
+}
+
+ion-segment-button.md::part(native) {
+  color: #000;
+}
+
+.segment-button-checked.md::part(native) {
+  color: #dc5097;
+}
+
+ion-segment-button.md::part(indicator-background) {
+  height: 4px;
+}

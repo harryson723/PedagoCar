@@ -1,0 +1,281 @@
+[
+  {
+    "id": "1",
+    "title": "CONDUCIENDO EL TREN",
+    "category": "movimiento",
+    "keywords": "coordinación, equilibrio, lateralidad",
+    "purpose": "Desarrollar en el niño procesos consciente de movimiento en diferentes direcciones, el reforzamiento del esquema corporal, su ubicación en el espacio y la observación.",
+    "description": "Se organiza un grupo de 4 a 6 niños (hermanos, otros niños, adultos o padres) y se les indica que se coloquen en una fila cogiéndose por la cintura. El último de la fila será el maquinista que indica al tren (a los demás niños) en qué dirección se van a mover, utilizando los siguientes comandos que deben ser comunicadas al participante de adelante, empezando por el maquinista hasta el primero de la fila que se moverá para que todos le sigan: toque en la cabeza: el tren va hacia adelante, toque la espalda: el tren va hacia atrás, toque en el hombro derecho: el tren va hacia la derecha, toque en el hombro izquierdo: el tren va hacia la izquierda.",
+    "materials": ["Espacio"],
+    "variables": "Iniciar en un ritmo suave en donde el adulto decide en que dirección se dirige el tren definiendo un punto inicio y punto de llegada. El desplazamiento puede ir aumentando de velocidad además de experimentar diferentes formas de hacerlo: gateando en donde los niños se toman de los tobillos, con agarre entre las piernas o caminando. Rote a los niños (maquinista) para que tengan la oportunidad de decidir como se desplaza el tren. Pida a los niños describan los objetos que observaron durante el recorrido o preguntar por uno en particular, (colores, formas) las partes de la casa. Acompañe esta actividad con una historia para motivar la imaginación de los niños.",
+    "psycomotor": [
+      {
+        "title": "Motor",
+        "description": "Gatear, caminar, coordinación, equilibro, manejo temporoespacial, lateralidad."
+      },
+      {
+        "title": "Cognitivo",
+        "description": "Toma de decisiones (maquinista), atención y concentración (niños que hacen del tren), exploración, observación, descripción, imaginación"
+      },
+      {
+        "title": "Social",
+        "description": "Cooperación y colaboración, trabajo en equipo, fortalecer los procesos sociales, acatar órdenes, liderazgo."
+      }
+    ],
+    "extraInfo": [
+      {
+        "title": "Adaptación a espacios reducidos",
+        "description": "Definir una ruta para que los niños se desplacen. Utilizar todas las partes de la casa donde puedan o no encontrar obstáculos, como sillas, mesas u otros objetos"
+      }
+    ],
+    "img": "/img/activities/conduciendoTren.avif"
+  },
+  {
+    "id": "2",
+    "title": "VOLANDO AL TIRO AL BLANCO",
+    "category": "precisión",
+    "keywords": "coordinación fina, lanzamiento",
+    "purpose": "Estimular la manipulación de materiales para construcción de elementos de juego.",
+    "description": "Se elabora un avión de papel el cual será utilizado como elemento (dardo) que será lanzado hacia un tiro al blanco. A una distancia de 3 a 5 metros se ubica el equipo conformado por el niño, sus hermanos, otros niños y los padres (o un adulto), quienes a su turno lanzaran el avión hacia el tiro al blanco intentando sumar la mayor cantidad de puntos posibles",
+    "materials": ["Hojas de papel", "un objeto que haga de tiro al blanco"],
+    "variables": "El juego puede comenzar con un proceso de aprendizaje de plegado básico o origami para niños, donde los participantes aprenden sobre esta técnica de manipulación del papel. El niño puede probar varias formas de lanzar el avión: de arriba hacia abajo, de abajo hacia arriba, en posición estática o en movimiento. El tiro al blanco puede tener en su estructura formas (figuras geométricas,) colores, números, que pueden apoyar el desarrollo cognitivo de los niños. Utiliza otros elementos que puedan servir de tiro al blanco (aro, caja de cartón, cesto de la ropa, etc.). Involucre a los niños en la construcción de los aviones y en el tiro blanco.",
+    "psycomotor": [
+      {
+        "title": "Motor",
+        "description": "Precisión, lanzamiento, coordinación fina y gruesa, manejo temporoespacial, capacidad básica de movimiento (lanzar)."
+      },
+      {
+        "title": "Cognitivo",
+        "description": "Atención, concentración, memorización."
+      },
+      {
+        "title": "Social",
+        "description": "Cooperación y colaboración, trabajo en equipo, autoestima, perseverancia, paciencia, proponer la Interacción social."
+      }
+    ],
+    "extraInfo": [
+      {
+        "title": "Adaptación a espacios reducidos",
+        "description": "Para esta actividad se puede utilizar cualquier lugar de la casa en donde se cuente con un espacio de juego mínimo de 5 metros x 5 metros (sala, comedor, garaje)."
+      }
+    ],
+    "img": "/img/activities/paperplane.jpg"
+  },
+  {
+    "id": "3",
+    "title": "CAMINITO DE JUGUETES",
+    "category": "coordinación",
+    "keywords": "equilibrio, coordinación visomanual",
+    "purpose": "Estimular los procesos de construcción por medio de la manipulación de elementos.",
+    "description": "Utilizando elementos encontrados en casa, el niño, con la ayuda de sus hermanos (u otros niños) y de un adulto, elegirá los objetos más apropiados para hacer un camino por el que los participantes tendrán que desplazarse desde un punto de partida hasta un punto final o meta.",
+    "materials": ["Espacio despejado", "juguetes", "ropa", "calzado", "cobijas"],
+    "variables": "El camino puede estar provisto de diferentes distancias y pruebas de paso. El camino puede ajustarse en su construcción para que el niño pueda desplazarse por él o llevar un objeto. Si el camino es para que un niño se desplace, esto puede hacerse individualmente o en grupo, donde los participantes se toman de las manos, de la cintura o de los hombros. Este movimiento puede ser hacia delante, hacia los lados o hacia atrás, dependiendo de las habilidades ya adquiridas por los niños. Si se trata de un objeto, puede ser empujado o arrastrado por una cuerda. Involucre a los niños en la construcción de la pista.",
+    "psycomotor": [
+      {
+        "title": "Motor",
+        "description": "Precisión, coordinación fina y gruesa, coordinación visomanual, equilibrio."
+      },
+      {
+        "title": "Cognitivo",
+        "description": "Atención, concentración, creatividad, imaginación, exploración, clasificación y asociación de objetos."
+      },
+      {
+        "title": "Social",
+        "description": "Cooperación y colaboración, trabajo en equipo, toma de decisiones, perseverancia, paciencia, fortalecer los procesos sociales."
+      }
+    ],
+    "extraInfo": [
+      {
+        "title": "Adaptación a espacios reducidos",
+        "description": "Para esta actividad se puede utilizar todas las instalaciones de la casa, según la decisión de lo largo del camino a construir."
+      }
+    ],
+    "img": "/img/activities/camino.webp"
+  },
+  {
+    "id": "4",
+    "title": "EL TOCA TOCA",
+    "category": "coordinación",
+    "keywords": "equilibrio, coordinación corporal",
+    "purpose": "Conocimiento de las partes de mi cuerpo",
+    "description": "Trabajando en parejas, se realizan los movimientos necesarios para que las partes del cuerpo, elegidas por un líder (otro niño o un adulto), se toquen entre sí. Se debe mantener el equilibrio y las partes elegidas deben permanecer en contacto hasta el final de la actividad.",
+    "materials": ["Espacio despejado"],
+    "variables": "La actividad puede ser realizada por dos, tres o más niños. El nivel de complejidad de la actividad se puede elevar manteniendo el contacto de las partes elegidas, que puede ser un movimiento a la vez para pasar al siguiente o manteniendo todas las partes en contacto hasta el final de la actividad.",
+    "psycomotor": [
+      {
+        "title": "Motor",
+        "description": "Coordinación, equilibrio."
+      },
+      {
+        "title": "Cognitivo",
+        "description": "Atención, concentración, creatividad, toma de decisiones."
+      },
+      {
+        "title": "Social",
+        "description": "Cooperación y colaboración, trabajo en equipo, perseverancia, liderazgo. Interacción social."
+      }
+    ],
+    "extraInfo": [
+      {
+        "title": "Adaptación a espacios reducidos",
+        "description": "Para esta actividad se puede utilizar cualquier lugar de la casa en donde se cuente con un espacio de juego de 5 metros x 5 metros (sala, comedor, garaje)."
+      }
+    ],
+    "img": "/img/activities/tocatoca.jpg"
+  },
+  {
+    "id": "5",
+    "title": "ZAPATOS LOCOS",
+    "category": "construcción",
+    "keywords": "coordinación fina, equilibrio",
+    "purpose": "Estimular los procesos de construcción de elementos.",
+    "description": "Utilizando una cantidad de zapatos, los niños, en coordinación con un adulto, intentarán construir una torre de zapatos que se mantenga en pie durante un minuto.",
+    "materials": ["Espacio", "zapatos"],
+    "variables": "La actividad puede realizarse individualmente o en pequeños grupos. Otra actividad que se puede hacer bajo la dirección de un adulto, los zapatos se pueden utilizar para construir la línea más larga o indicar números, letras o palabras cortas que los niños representarán (dibujarán) utilizando los zapatos.",
+    "psycomotor": [
+      {
+        "title": "Motor",
+        "description": "Coordinación fina, coordinación visomanual."
+      },
+      {
+        "title": "Cognitivo",
+        "description": "Atención, concentración, procesos creativos, toma de decisiones."
+      },
+      {
+        "title": "Social",
+        "description": "Interacción social, trabajo en equipo, colaboración, cooperación, asumir retos."
+      }
+    ],
+    "extraInfo": [
+      {
+        "title": "Adaptación a espacios reducidos",
+        "description": "Para esta actividad se puede realizar los en lugares de la casa con espacio."
+      }
+    ],
+    "img": "/img/activities/zapatos.webp"
+  },
+  {
+    "id": "6",
+    "title": "LAGO DE LAVA",
+    "category": "imaginación",
+    "keywords": "coordinación, equilibrio, creatividad",
+    "purpose": "Estimular el desarrollo de los patrones básicos de movimientos, además de la imaginación y la creatividad.",
+    "description": "El adulto o padre de familia propone una historia en la que los niños son un grupo de aventureros que visitan un bosque encantado lleno de lugares y animales muy particulares. Según el relato de los adultos, los niños se encontrarán con un volcán en erupción que convertirá el suelo en un lago de lava, que tendrán que atravesar con la ayuda de todos y de forma creativa, utilizando elementos de la casa.",
+    "materials": ["Espacio", "hojas de papel", "sillas", "mesas", "cojines", "mantas", "ropa"],
+    "variables": "La actividad puede permitir un reto en el que se formen grupos de trabajo (de 3 a 5 participantes) y tengan que organizar una estrategia para llegar de un extremo al otro del lago de lava. Los desplazamientos sobre los objetos seleccionados (sillas, mesas, tapetes, cojines, hojas de papel, etc.) pueden realizarse gateando, arrastrándose o caminando, según el grado de madurez motriz de los niños. Deben aplicarse todas las medidas de seguridad para evitar accidentes. Los niños pueden construir o utilizar elementos para caracterizarse. Involucre a los niños en la construcción de la historia en la que se basa la obra.",
+    "psycomotor": [
+      {
+        "title": "Motor",
+        "description": "Correr, saltar, equilibrio, manejo tempo espacial, coordinación (gruesa y fina), equilibrio."
+      },
+      {
+        "title": "Cognitivo",
+        "description": "Atención, concentración, toma de decisiones, creatividad, imaginación."
+      },
+      {
+        "title": "Social",
+        "description": "Trabajo en equipo, colaboración, cooperación, interacción social."
+      }
+    ],
+    "extraInfo": [
+      {
+        "title": "Adaptación a espacios reducidos",
+        "description": "Para esta actividad se puede utilizar algunos espacios de la casa que cuenten con un espacio amplio (sala, comedor, garaje)."
+      }
+    ],
+    "img": "/img/activities/lava.jpg"
+  },
+  {
+    "id": "7",
+    "title": "SOPLANDO Y GOL",
+    "category": "respiración",
+    "keywords": "coordinación fina, capacidad pulmonar",
+    "purpose": "Estimulación de los procesos de sensibilización interna (respiración).",
+    "description": "En un espacio delimitado por una cinta con pegamento, se dibuja en el suelo la zona de juego (campo de fútbol), donde cada equipo de jugadores intenta marcar un gol soplando una pelota ligera en la portería del contrincante.",
+    "materials": ["Espacio despejado", "cinta de enmascarar papel", "pelota liviana o de espuma", "pitillos"],
+    "variables": "Defina el tamaño de la zona de juego (campo de fútbol) en función del espacio donde decidan realizar la actividad. Dependiendo del tamaño del área de juego, la participación puede ser individual o en equipos (dos, tres o más participantes). Otra forma de llevar la pelota liviana al campo del equipo contrario y marcar un gol es utilizar otros elementos, como pitillos. Involucre a los niños en la construcción de la zona de juego (campo de fútbol).",
+    "psycomotor": [
+      {
+        "title": "Motor",
+        "description": "Coordinación fina, estimular la capacidad pulmonar, fortalecer los músculos que intervienen en la respiración."
+      },
+      {
+        "title": "Cognitivo",
+        "description": "Atención, concentración, creatividad, toma de decisiones."
+      },
+      {
+        "title": "Social",
+        "description": "Cooperación y colaboración, trabajo en equipo, liderazgo, fortalecer los procesos sociales."
+      }
+    ],
+    "extraInfo": [
+      {
+        "title": "Adaptación a espacios reducidos",
+        "description": "Para esta actividad se puede utilizar cualquier lugar de la casa en donde se cuente con un espacio de juego de 5 metros x 5 metros (sala, comedor, garaje)."
+      }
+    ],
+    "img": "/img/activities/soplando.jpg"
+  },
+  {
+    "id": "8",
+    "title": "TRES, DOS, UNO, DESPEGUE",
+    "category": "respiración",
+    "keywords": "coordinación fina, capacidad pulmonar",
+    "purpose": "Estimulación de los procesos de sensibilización interna (respiración), y la manipulación de materiales para construcción de elementos de juego.",
+    "description": "En un espacio delimitado se ancla una línea de cuerda (hilo, lana o piola) en un extremo y se coloca una bomba en el otro, apoyada en un pitillo, para lanzarlo como un cohete. El niño debe inflar la bomba y colocarla en la línea de cuerda y luego soltarla. La bomba (cohete) debe intentar desplazarse lo más lejos posible.",
+    "materials": ["Lana", "hilo o piola", "cinta de enmascarar", "bombas", "pitillos", "cartulina", "marcadores", "colores"],
+    "variables": "Definir el tamaño de la zona de juego donde se puede colocar una línea de hilo, lana o piola con una distancia no superior a 5 metros. Se pueden colocar varias líneas de hilo para completar recorridos (retos) a lo largo de la casa. La línea de hilo puede ser sostenida por dos personas (niños o adultos) para ser llevada y colocada en varias partes de la casa. La actividad de lanzamiento del cohete puede realizarse de forma individual o colectiva. La bomba puede ser sustituida por un vaso de icopor o de plástico que el niño debe soplar varias veces para su desplazamiento. En esta dinámica de juego, el objetivo es que el cohete llegue al final de la línea de hilo con el menor número de soplos posible. Involucre a los niños en la construcción y decoración del cohete.",
+    "psycomotor": [
+      {
+        "title": "Motor",
+        "description": "Coordinación fina, estimular la capacidad pulmonar, fortalecer los músculos que intervienen en la respiración."
+      },
+      {
+        "title": "Cognitivo",
+        "description": "Creatividad, toma de decisiones."
+      },
+      {
+        "title": "Social",
+        "description": "Cooperación y colaboración, liderazgo, asumir retos, trabajo en equipo, proponer la interacción social."
+      }
+    ],
+    "extraInfo": [
+      {
+        "title": "Adaptación a espacios reducidos",
+        "description": "Para esta actividad se puede utilizar uno o varios lugares de la casa en donde se cuente con un espacio de juego mínimo de 5 metros x 5 metros (pasillo, sala, comedor, garaje)."
+      }
+    ],
+    "img": "/img/activities/globos.jpg"
+  },
+  {
+    "id": "9",
+    "title": "PASA CON CUIDADO",
+    "category": "coordinación",
+    "keywords": "equilibrio, manejo segmentario",
+    "purpose": "Estimulación del sentido kinestésico, además de promover el sentido de lucha y de alcanzar metas.",
+    "description": "Esta actividad debe contar con un espacio que permita la creación de una telaraña aérea, utilizando cinta adhesiva, hilo o papel. El niño debe cruzar esta maraña, evitando tocar o pelar las tiras de cinta, hilo o papel. La actividad termina cuando el niño cruza de principio a fin el área definida para la maraña aérea.",
+    "materials": ["Pasillo", "marco de una puerta", "Lana", "hilo", "cinta de enmascarar", "papel de colores"],
+    "variables": "Esta actividad puede realizarse de varias maneras, donde la construcción de la maraña aérea puede ser una simulación de un muro o la creación de un túnel, sobre un pasillo. Dependiendo del desarrollo de las habilidades motrices de los niños, esta actividad puede probarse de forma individual o colectiva. Teniendo en cuenta lo anterior, el paso puede ser desplazándose hacia delante, hacia los lados o hacia atrás. Si la experiencia se hace en grupo, se puede atar a los niños del equipo por la cintura. Puede aumentar el nivel de dificultad vendando a los niños, donde se les indica cómo deben desplazarse. Involucre a los niños en la construcción de la maraña aérea.",
+    "psycomotor": [
+      {
+        "title": "Motor",
+        "description": "Coordinación gruesa, equilibrio, coordinación, manejo segmentario."
+      },
+      {
+        "title": "Cognitivo",
+        "description": "Atención, concentración, exploración, observación, toma de decisiones."
+      },
+      {
+        "title": "Social",
+        "description": "Autoestima, cooperación, trabajo en equipo, solidaridad, control emocional."
+      }
+    ],
+    "extraInfo": [
+      {
+        "title": "Adaptación a espacios reducidos",
+        "description": "Para esta actividad, utilizar un marco de puerta o pasillo de la casa para su desarrollo."
+      }
+    ],
+    "img": "/img/activities/red.jpg"
+  }
+]
